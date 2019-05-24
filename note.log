@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.5.3)  22 MAY 2019 16:55
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.5.3)  24 MAY 2019 22:22
 entering extended mode
 **c:/Users/lenovo/Desktop/课件/固体物理/固体物理笔记/note.tex
 (c:/Users/lenovo/Desktop/课件/固体物理/固体物理笔记/note.tex
@@ -1614,11 +1614,8 @@ Missing character: There is no = in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 3 in font nullfont!
-) [34] [35] [36] [37]
-
-LaTeX Warning: Reference `半经典闭合轨道的量子化' on page 38 undefined on input line 275.
-
-) (Chapters/Problems.tex [38]
+) [34] [35] [36] [37])
+(Chapters/Problems.tex [38]
 Chapter 5.
 [39
 
@@ -1630,19 +1627,12 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 154.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
 Package rerunfilecheck Info: File `note.out' has not changed.
 (rerunfilecheck)             Checksum: C03861F36A6AE1A8A0BE6C1EFD6C52AE.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
  ) 
 Here is how much of TeX's memory you used:
  53101 strings out of 427671
  1225508 string characters out of 3149235
- 1466864 words of memory out of 3000000
+ 1467924 words of memory out of 3000000
  56481 multiletter control sequences out of 15000+200000
  541077 words of font info for 106 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
