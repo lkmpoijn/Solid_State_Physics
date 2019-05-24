@@ -1,0 +1,505 @@
+\chapter{能带理论I}\label{chapter:能带理论I}
+    假定在体积$V=L^3$中有$N$个带正电荷$Ze$的离子实，相应有$NZ$个价电子，简称为电子。
+    如果电子和离子实的位置矢量分别用$r_i$和$R_n$表示，体系的哈密顿量由电子动能和库伦作用势，离子实动能和库伦相互作用能，以及电子和离子实之间的库伦相互作用能。
+
+    由于过于复杂，因此要采用一些假设和近似：
+    \begin{itemize}
+        \item {绝热近似}：假定离子实在运动的每一瞬间，电子运动都快到足以调整其状态到离子实瞬时分布情况的本征值。这使得我们可以认为离子实处于固定位置
+        \item 然后采用单电子近似，即使用平均场代替电子之间的库伦作用势。
+        \item  之后采取周期场近似，即势函数满足
+        \begin{equation}
+            V(r+R_n)=V(r).
+        \end{equation}
+    \end{itemize}
+    这使得单电子薛定谔方程
+    \begin{equation}
+        \left[-\frac{\hbar^2}{2m}\nabla^2+V(r)\right]\psi(r)=\varepsilon(r)
+    \end{equation}
+    的本征函数取布洛赫波函数的形式，并使得单电子能谱呈能带结构。
+    之后还将从弱周期场和紧束缚两个极限情况出发，了解电子能带结构的起源。
+    
+    
+
+    \section{布洛赫定理及能带}\label{section:布洛赫定理及能带}
+        \subsection{布洛赫定理及证明}\label{subsection:布洛赫定理及证明}
+            \begin{define}
+                对于周期性势场，即
+                \begin{equation}
+                    V(r+R_n)=V(r),
+                \end{equation}
+                其中$R_n$取布拉维格子的所有格矢，单电子薛定谔方程
+                \begin{equation}
+                    \hat{H}\psi(r)=\left[-\frac{\hbar^2}{2m}\nabla^2+V(r)\right]\psi(r)=\varepsilon\psi(r)
+                \end{equation}
+                的本征函数是按布拉维格子周期性调幅的平面波，即
+                \begin{equation}
+                    \psi_k(r)=e^{ik\cdot r}u_k(r)\label{周期场单电子波函数形式},
+                \end{equation}
+                且
+                \begin{equation}
+                    u_k(r+R_n)=u_k(r)\label{波函数内周期函数的形式}
+                \end{equation}
+                对于$R_n$取布拉维格子的所有格矢成立。
+            \end{define}
+            从\autoref{周期场单电子波函数形式}和\autoref{波函数内周期函数的形式}可以看出，布洛赫定理也可以表述为对上述薛定谔放的每一本征解，
+            存在一波矢$k$，使得
+            \begin{equation}
+                \psi_k(r+R_n)=e^{ik\cdot r}u_k(r)\label{布洛赫定理}
+            \end{equation}
+            对属于布拉维格子的所有格矢$R_n$成立。
+
+            遵从周期势单电子薛定谔方程的电子．或用布洛赫波函数描述的电子称为布洛赫电子。
+
+            定理的证明如下：
+
+            引入平移算符$\hat{T}_{R_n}$，其定义是$\hat{T}_{R_n}$作用在任意函数$f(r)$上，使矢量$r$平移$R_n$，即
+            \begin{equation}
+                \hat{T}_{R_n}f(r)=f(r+R_n)\label{平移算符的定义}.
+            \end{equation}
+            由于微分算符和坐标原点的平移无关，以及势场的周期性，薛定谔方程中的哈密顿量具有平移对称性$\hat{H}(r+R_n)=\hat{H}(r)$，与$\hat{T}_{R_n}$
+            对易，即
+            \begin{equation}
+                \hat{T}_{R_n}\hat{H}=\hat{H}\hat{T}_{R_n},
+            \end{equation}
+            也就是作用于任意函数$\psi(r)$上，有相同的结果
+            \begin{equation}
+                \begin{split}
+                    \hat{T}_{R_n}H\psi(r)&=\hat{H}(r+R_n)\psi(r+R_n)\\
+                    &=\hat{H}(r)\psi(r+R_n)=\hat{H}\hat{T}_{R_n}\psi(r).
+                \end{split}
+            \end{equation}
+            按照量子力学的一般原理，两对易算符有共同的本征函数。因此，对$\hat{H}$本征函数的讨论可以代之以对$\hat{T}_{R_n}$的本征函数的讨论。
+
+            如果$\psi(r)$是$\hat{T}_{R_n}$和$\hat{H}$的共同的本征函数，有
+            \begin{equation}
+                \hat{T}_{R_n}\psi(r)=\lambda_{R_n}\psi(r)\label{平移算符本征方程}.
+            \end{equation}
+            $\lambda_{R_n}$是相应的本征值，根据平移算符的定义\autoref{平移算符的定义}
+            \begin{equation}
+                \psi(r+R_n)=\lambda_{R_n}\psi(r).
+            \end{equation}
+            根据波函数的归一性
+            \begin{equation}
+                \int\left|\psi(r)\right|^2\dif r=\int\left|\psi(r+R_n)\right|^2\dif r=1
+            \end{equation}
+            要求
+            \begin{equation}
+                \left|\lambda_{R_n}\right|^2=1.
+            \end{equation}
+            $\lambda_{R_n}$可写作
+            \begin{equation}
+                \lambda_{R_n}=e^{i\beta_{R_n}}\label{平移算符本征值}
+            \end{equation}
+            的形式，即$\psi(r+R_n)$和$\psi(r)$仅相差一个相位因子。
+
+            另外，平移算符的本征值间有一定关系，如
+            \begin{equation}
+                \hat{T}_{R_n}\hat{T}_{R_m}\psi=\hat{T}_{R_n}\lambda_{R_m}\psi=\lambda_{R_n}\lambda_{R_m}\psi,
+            \end{equation}
+            因而平移算符的本征值必须满足
+            \begin{equation}
+                \lambda_{R_n+R_m}=\lambda_{R_n}\lambda_{R_m}\label{平移算符本征值关系},
+            \end{equation}
+            将\autoref{平移算符本征值}代入上式，两边取对数得到
+            \begin{equation}
+                \beta_{R_n+R_m}=\beta_{R_n}+\beta_{R_m},
+            \end{equation}
+            上式仅当$\beta$与$R_n$之间呈线性关系才能满足，取$\beta_{R_n}=k\cdot R_{n}$，则
+            \begin{equation}
+                \lambda_{R_n}=e^{ik\cdot R_n}.
+            \end{equation}
+            这样由于$\hat{H}$具有平移对称性，对于任意布拉维格子的格矢$R_n$，这里证明其本征函数满足
+            \begin{equation}
+                \hat{T}_{R_n}\psi(r)=\psi(r+R_n)=\lambda_{R_n}\psi(r)=e^{ik\cdot R_n}\psi(r).
+            \end{equation}
+            这也就是写作\autoref{平移算符本征值关系}形式的布洛赫定理。
+
+        \subsection{波矢$k$的取值和物理意义}\label{subsection:波矢k的取值和物理意义}
+            波矢$k$的取值由边界条件确定，与\autoref{section:模型和基态性质}相同，取周期性边界条件，
+            但不仅限于边长为$L$的立方体。\autoref{周期性边界条件}推广为
+            \begin{equation}
+                \left\{
+                    \begin{split}
+                        \psi(r+N_1a_1)=\psi(r),\\
+                        \psi(r+N_2a_2)=\psi(r),\\
+                        \psi(r+N_3a_3)=\psi(r),
+                    \end{split}\label{推广的周期性边界条件}\right.
+            \end{equation}
+            其中$a_i(i=1,2,3)$是布拉维格子的三个基矢，$N=N_1N_2N_3$是晶体中原胞的总数，$N_i$是量级为$N^{1/3}$的整数。
+
+            在\autoref{section:模型和基态性质}中，周期性边条件是对有限大的晶体．为得到体性质采取的数学处理上敢简便的边界条件。
+            这里要附加说明的是，周期性边条件去掉了表面对平移对称性的破坏．使有限大的晶体具有了完全的平移对称性。
+
+            将布洛赫定理\autoref{布洛赫定理}用于\autoref{推广的周期性边界条件}，得到
+            \begin{equation}
+                \psi(r+N_ia_i)=e^{iN_ik\cdot a_i}\psi(r),i=1,2,3,
+            \end{equation}
+            这要求
+            \begin{equation}
+                e^{iN_ik\cdot a_i}=l,i=1,2,3,
+            \end{equation}
+            或等价地
+            \begin{equation}
+                N_ik\cdot a_i=2\pi l_i,l_i\text{为整数},i=1,2,3\label{波矢k与晶格常数关系1}.
+            \end{equation}
+            将波矢用倒格子的基矢$b_i(i=1,2,3)$表示，即
+            \begin{equation}
+                k=k_1b_1+k_2b_2+k_3b_3,
+            \end{equation}
+            代入\autoref{波矢k与晶格常数关系1}，并利用正格子、倒格子基矢间的正交关系\footnote{正格子和倒格子基矢关系：$a_i\cdot b_j=\delta_{ij}$。}
+            得到
+            \begin{equation}
+                k=\frac{l_1}{N_1}b_1+\frac{l_2}{N_2}b_2+\frac{l_3}{N_3}b_3,
+            \end{equation}
+            即许可的布洛赫波矢$k$可以看成倒空间中，以$b_i/N_i(i=1,2,3)$为基矢的布拉维格子的格矢。
+
+            每个许可的$k$值由上述的布拉维格子的格点表示，在$k$空间中所占体积为
+            \begin{equation}
+                \Delta k=\frac{b_1}{N_1}\cdot\left(\frac{b_2}{N_2}\times\frac{b_3}{N_3}\right)=\frac{1}{N}b_1\cdot\left(b_2\times b_3\right),
+            \end{equation}
+            由于$b_1\cdot\left(b_2\times b_3\right)$是倒格子原胞的体积。因此倒格子空间一个原胞中许可的$k$
+            的数目等于实空间中晶体的总原胞数。
+
+            倒格子原胞体积为$\left(2\pi\right)^3/\Omega$，$\Omega$为正格子的原胞体积，$N\Omega=V$，这样，$k$空间的许可态的态密度
+            \begin{equation}
+                \frac{1}{\Delta k}=\frac{V}{8\pi^3}\label{周期性边界条件下的k空间态密度}.
+            \end{equation}
+            与自由电子的情形\autoref{k空间的态密度}相同。同样，在涉及$k$的计算中，求和过渡到积分的规则也与\autoref{费米球内的电子的平均能量的积分过程2}相同。
+
+            对于自由电子的动量（如\autoref{section:模型和基态性质}所述），可以用$\hbar k$表示，但是对于布洛赫电子，波矢$k$不比例于电子的动量，动量算符$\hat{p}=i\hbar\nabla$作用与布洛赫波\autoref{布洛赫定理}上，
+            \begin{equation}
+                -i\hbar\nabla\psi_k=-i\hbar\nabla\left( e^{ik\cdot r}u_k(r) \right)=\hbar k\psi_k-i\hbar e^{ik\cdot r}\nabla u_k(r),
+            \end{equation}
+            不能简单地写出一个常数乘以$\psi_k$，而$\psi_k$也不是动量算符的本征函数。
+
+        \subsection{能带及其图示}
+            将布洛赫波形式的解\autoref{布洛赫定理}代入单电子薛定谔方程\autoref{不含时单电子薛定谔方程}，得
+            \begin{equation}
+                \hat{H}_ku_k(r)=\left[ \frac{\hbar^2}{2m}\left( \frac{1}{i}\nabla+k \right)^2+V(r) \right]u_k(r)=\varepsilon_k(r)\label{布洛赫形式的单电子薛定谔方程}.
+            \end{equation}
+            边界条件为
+            \begin{equation}
+                u_k(r+R_n)=u_k(r).
+            \end{equation}
+
+            周期性边界条件意味着薛定谔方程实际上是限制在晶体的一个原胞的有限区域内的Hermitain本征值问题，对于$\hat{H}_k$的每一个参数
+            $k$，应有无穷个分离的本征值$\varepsilon_1(k)$，$\varepsilon_2(k)$，$\cdots$，$\varepsilon_n(k)$，布洛赫电子的状态应由
+            两个量子数$n$和$k$来标记，相应的能量和波函数写为$\varepsilon_n(k)$和$\psi_{nk}(r)$。
+
+            根据晶体的平移对称性，和波矢$k$相差任意倒格矢$G_h$的$k'$，
+            \begin{equation}
+                k'=k+G_h
+            \end{equation}
+            是等效的。相应的布洛赫函数$\psi_{nk}$和$\psi_{nk'}$代入平移算符的本征方程\autoref{平移算符本征方程}，有相同的本征值$e^{ik\cdot R_n}$,，它们描绘同一状态，即
+            \begin{equation}
+                \psi_{n,k,G_h}=\psi_{n,k}(r),
+            \end{equation}
+            相应的有
+            \begin{equation}
+                \varepsilon_n(k+G_h)=\varepsilon_n(k).
+            \end{equation}
+            
+            上式说明，对确定的$n$值，$\varepsilon_n(k)$是$k$的周期函数，只能在一定的范围内变化，有能量的上下界，从而
+            构成一能带。不同的$n$代表不同的能带，量子数$n$称为带指标，$\varepsilon_n(k)$的总体称为能带结构。
+
+            由于$k$和$k+G_h$是等价的，可以把$k$的取值限制在第一布里渊区内，再次区内任意两波矢之差均小于一个最短的倒格矢，将
+            所有能带$\varepsilon_n(k)$绘于第一布里渊区的图示方法称为布里渊区图示(reduced zone scheme)。第一布里渊区也常称为简约布里渊区。
+            由于$\varepsilon_n(k)$的周期性，也可以允许$k$的值区遍全$k$空间，有时这样做对问题的处理更为方便，这种图示方法为周期布里渊区(repeated zone scheme)。
+            当然，也可以将不同的能带绘于$k$空间中不同的布里渊区中，这种做法称为拓展布里渊区图示(extended zone scheme)。
+    
+    \section{弱周期势近似}\label{section:弱周期场近似}
+        本章对于自由电子气体在引入周期势的结果进行研究，对相当多的价电子为$s$电子$p$电子的金属，这是很好的近似。
+        在具体的计算上，弱周期势可以看作微扰，采用量子力学中标准的微扰论方法处理。
+        
+        \subsection{一维情况}\label{subsection:弱周期势近似一维情况}
+            讨论一长度为$L=Na$的一维晶体，$N$为长度为$a$的原胞总数，单电子的哈密顿量
+            \begin{equation}
+                \hat{H}=\hat{H}_0+\hat{H}'\label{周期场单电子哈密顿量},
+            \end{equation}
+            其中
+            \begin{equation}
+                \hat{H}_0=-\frac{\hbar^2}{2m}\nabla^2,
+            \end{equation}
+            为自由电子的单电子哈密顿量，相应的本征函数和本征能量为
+            \begin{align}
+                \phi_k^{(0)}(x)&=\sqrt{\frac{1}{\sqrt{L}}}e^{ikx}\label{自由电子哈密顿量本征函数},\\
+                \varepsilon_k^{(0)}&=\frac{\hbar^2k^2}{2m}\label{自由电子哈密顿量本征值},
+            \end{align}
+            上标$(0)$表示这是零级近似解。
+            
+            \autoref{周期场单电子哈密顿量}中$H'$为微扰势，因其周期性，可以进行傅里叶展开
+            \begin{equation}
+                \hat{H}'=V(x)=\sum_n{}'V_ne^{i2\pi\frac{n}{a}x}\label{周期微扰势的傅里叶展开},
+            \end{equation}
+            展开式中仅有波矢为倒格矢的项存在，求和号加撇表示不包括$n=0$的项，傅里叶系数$V_n$
+            一般为复数，为简单器件，假定
+            \begin{equation}
+                V_n=V_{-n},
+            \end{equation}
+            以保证$V(x)$为实数。
+
+            计算到一级修正，波函数可写作
+            \begin{equation}
+                \begin{aligned}
+                    \phi_k(x)&=\phi_k^{(0)}(x)+\phi_k^{(1)}(x)\\
+                    &= \phi_k^{(0)}(x)+\sum_{k}{}'\frac{H_{kk'}'}{\varepsilon_k^{(0)}-\varepsilon_{k'}^{(0)}}\psi_{k'}^{(0)}(x),                
+                \end{aligned}\label{周期势微扰的一级修正波函数}
+            \end{equation}
+            其中，
+            \begin{equation}
+                H'_{kk'}=\braket{k'|V(x)|k}=\frac{1}{L}\int_{L}^{-L}e^{-i(k-k')x}V(x)\dif x,
+            \end{equation}
+            为$V(x)$的傅里叶展开的系数。由于$V(x)$的周期性，仅当
+            \begin{equation}
+                k'-k=G_h=2\pi\frac{n}{a}\label{周期性微扰哈密顿矩阵元不为零的情况}
+            \end{equation}
+            时不为0，此时
+            \begin{equation}
+                H'_{kk'}=\braket{k'|V(x)|k}=V_n\label{周期性微扰哈密顿量与微扰势关系}.
+            \end{equation}
+            \autoref{周期势微扰的一级修正波函数}波函数变为
+            \begin{equation}
+                \begin{aligned}
+                    \psi_k(x)&=\frac{1}{\sqrt{L}}e^{ikx}+\sum_n{}'\frac{V_n}{\frac{\hbar^2}{2m}\left[ k^2-\left( k+2\pi\frac{n}{a} \right)^2 \right]}\frac{1}{\sqrt{L}}e^{i\left( k+2\pi \frac{n}{a}\right)x}\\
+                    &=\frac{1}{\sqrt{L}}e^{ikx}\left\{ 1+\sum_n{}'\frac{V_n}{\frac{\hbar^2}{2m}\left[ k^2-\left( k+2\pi\frac{n}{a} \right)^2 \right]}\frac{1}{\sqrt{L}}e^{i2\pi \frac{n}{a}x}\right\},
+                \end{aligned}
+            \end{equation}
+            连加式内的指数函数在$x$改变$a$的任意整数倍时都不改变，花括号内是具有晶格平移对称性的周期函数。
+            这样考虑了弱周期势的微扰，计算得到了一级修正，显示了波函数从自由电子的平面波向布洛赫波的过渡。
+
+            对能量的一级修正为
+            \begin{equation}
+                \varepsilon_k^{(1)}=H'_{kk'}=\braket{k'|V(x)|k}=\frac{1}{L}\int_{L}^{-L}V(x)\dif x,
+            \end{equation}
+            这是势场的平均值。\autoref{周期微扰势的傅里叶展开}中，不包括$n=0$的项，相当于取$V(x)$的平均值为零，
+            弱周期势对本征能量的影响，要计算到二级修正才可看出：
+            \begin{equation}
+                \begin{aligned}
+                    \varepsilon_k&=\varepsilon_k^{(0)}+\varepsilon_k^{(2)}\\
+                    &=\varepsilon_k^{(0)}+\sum_{k'}{}'\frac{\left|H_{kk'}'\right|^2}{\varepsilon_k^{(0)}-\varepsilon_{k'}^{(0)}}.                    
+                \end{aligned}\label{能量微扰的二阶修正}
+            \end{equation}
+            利用\autoref{周期性微扰哈密顿矩阵元不为零的情况}和\autoref{周期性微扰哈密顿量与微扰势关系}，上式可写作
+            \begin{equation}
+                \varepsilon_k=\frac{\hbar^2k^2}{2m}+\sum_{k'}{}'\frac{\left|V_n\right|^2}{\frac{\hbar^2}{2m}\left[k^2-\left( k+2\pi\frac{n}{a} \right)^2\right]}.
+            \end{equation}
+
+            对于一般的$k$值，$k^2\neq \left( k+2\pi \frac{n}{a}\right)$，由于周期势很弱，$\left|V_n\right|^2$很小，
+            $\varepsilon_k$与$\varepsilon_L^{(0)}$相差不大，周期势的影响可以忽略不计，但是当
+            \begin{equation}
+                k^2= \left( k+2\pi \frac{n}{a}\right)\label{简并微扰使用条件1}
+            \end{equation}
+            或
+            \begin{equation}
+                \varepsilon_k^{(0)}=\varepsilon_{k'}^{(0)}\label{简并微扰使用条件2}
+            \end{equation}
+            时，二级修正发散，$\varepsilon_k^{(0)}$趋于无穷，\autoref{能量微扰的二阶修正}不能使用，需要采用简并微扰的方法。
+        
+        \subsection{能隙和布拉格反射}
+            当满足\autoref{简并微扰使用条件1}时，简并微扰的处理相当于在波函数的展开式\autoref{周期势微扰的一级修正波函数}中，除$\psi_k^{(0)}(x)$
+            以外，仅保留与其简并的$\psi_{k'}^{(0)}$，波函数
+            \begin{equation}
+                \psi(x)=a\psi_k^{(0)}-b\psi_{k'}^{(0)}(x).
+            \end{equation}
+            
+            代入哈密顿量为\autoref{周期场单电子哈密顿量}的薛定谔方程，注意到$\hat{H}_0$的本征函数和本征值分别为\autoref{自由电子哈密顿量本征函数}和\autoref{自由电子哈密顿量本征值}
+            将得到的方程分别左乘$\psi_k^{(0)*}(x)$和$\psi_{k‘}^{(0)*}(x)$并积分，可得$a$，$b$必须满足的关系式，
+            \begin{equation}
+                \left\{ 
+                    \begin{aligned}
+                        (\varepsilon_k^{(0)}-\varepsilon)a+V_nb=0,\\
+                        V_na+(\varepsilon_{k'}^{(0)}-\varepsilon)b=0.
+                    \end{aligned}\right.
+            \end{equation}
+            其中$a$，$b$有解的条件为
+            \begin{equation}
+                \begin{vmatrix}
+                    \varepsilon_k^{(0)}-\varepsilon&V_n\\
+                    V_n&\varepsilon_{k'}^{(0)}-\varepsilon
+                \end{vmatrix}=0\label{一维简并情况久期方程}
+            \end{equation}
+            由此可得
+            \begin{equation}
+                \varepsilon_{\pm}=\frac{1}{2}\left\{ ( \varepsilon_k^{(0)}+\varepsilon_{k'}^{(0)})\pm\left[ (\varepsilon_k^{(0)}-\varepsilon_{k'}^{(0)} )+4\left|V_n\right|^2 \right]^{1/2}\right\}.
+            \end{equation}
+            当$k$的取值满足\autoref{简并微扰使用条件1}或\autoref{简并微扰使用条件2}，即
+            \begin{equation}
+                k=-\frac{\pi}{a}n,\text{n取整数}
+            \end{equation}
+            时，
+            \begin{equation}
+                \varepsilon_{\pm}=\frac{\hbar^2k^2}{2m}\pm|V_n|.
+            \end{equation}
+            这样，弱周期势使自由电子具有抛物线形式的$\varepsilon_k^{(0)}$在波矢$k=\frac{1}{2}G_b=\frac{\pi}{a}n$，即布拉格点（一维体系的布拉格平面处）断开，能量
+            的突变为$2|V_n|$，这种断开使得准连续的电子谱出现能隙。在能隙范围内没有许可的电子态，
+            电子能级分裂成一系列的能带。而且在布拉格平面\index{布拉格平面}\footnote{在倒易空间中，连接原点和某一个倒格点的倒易格矢的垂直平分面为布拉格平面，在X射线衍射中，满足布拉格条件的入射波矢和反射波矢关于该平面对称。}附近，$\varepsilon(k)$曲线画成水平的，即$\partial \varepsilon/\partial k=0$，原因在之后的章节进行解释。
+            
+            一维情况得到的主要结果可以推广到二维和三维情形，如果从$k$空间的原点出发，沿某一特点方向，考察$\varepsilon(k)$的变化，在弱周期势
+            情形下，它们将像自由电子一样，比例于$k^2$，成抛物线变化。但是在跨越第一布里渊区边界和其他布拉格平面时，发生能量的跳变。
+            例如对于二位长方格子，沿某一接近第一布里渊区角的方向，如\autoref{二维长方倒格子的第一布里渊区和一些布拉格线的示意}所示，$\varepsilon(k)$
+            在$x_1$，$x_2$，$x_3$，$x_4$等处发生跃变，如区边界或者布拉格平面是某一倒格矢$G_h$的垂直平分面，则能量跃变大小为$2|V_{G_h}|$的量级，
+            $V_{G_h}$是弱周期势傅里叶展开中与$G_h$相联系项的系数，具体的计算仍要用简并微扰论方法，需要考虑波矢相差一倒格矢，在自由电子情形能量简并的态。
+            比如\autoref{二维长方倒格子的第一布里渊区和一些布拉格线的示意}中的$P$态，需要考虑和$P'$态的混合，为了得到在$Q$点的能量跃变，则需要考虑和$Q'$，$Q''$
+            态的混合，与\autoref{一维简并情况久期方程}对应的是$3\times3$的行列式。
+            \input{Chapters/二维长方倒格子的第一布里渊区和一些布拉格线的示意.tex}
+
+            三维情况下，简并条件\autoref{简并微扰使用条件1}可以写作
+            \begin{equation}
+                |k|=|k-G_h|,
+            \end{equation}
+            相当于
+            \begin{equation}
+                k\cdot G_h=\frac{1}{2}G_h.
+            \end{equation}
+            也就是发生布拉格反射的劳厄条件。这说明，在电子波矢接近出现布拉格反射的区域时，弱周期势有明显作用，
+            导致能隙的出现，因而准连续的$\varepsilon(k)$分裂成能带，这是晶体中电子结构重要的基本性质。金属、半导体的很多特性与此有关。
+
+        \section{紧束缚近似}\label{section:紧束缚近似}
+            
+            本章换一角度，考虑将孤立原子放到布拉维格子的格点上，形成晶格时，单电子态发生的变化，为处理方便，仅讨论近邻原子的电子波函数相互交叠
+            相当小，即电子紧束缚在原子上的情形，重在强调交叠引起的变化。本节的目的，除去从另一角度将\autoref{section:布洛赫定理及能带}的一般讨论具体
+            化外，其物理图像及结果较适用于过渡族金属中的$3d$电子，及固体中的其他内层电子。
+
+            \subsection{模型及计算}
+                假定$\varphi_i(r)$是孤立原子与本征能量$\varepsilon_r$对应的单电子本征态，即
+                \begin{equation}
+                    \hat{H}_{at}\varphi_i=\left[ - \frac{\hbar^2}{2m} +V_{at}(r) \right]\varphi_i=\varepsilon_r\varphi_i,
+                \end{equation}                
+                其中$V_{at}(r)$是单原子势场，$i$代表原子中的某一量子态，假定$\varphi_i(r)$是归一化且不简并的。
+
+                紧束缚近似的出发点是将晶体中单电子波函数看出是$N$（晶体中格点数）个简并的原子波函数的线性组合，及
+                \begin{equation}
+                    \psi(r)=\sum_{R_m}a_m\varphi_i(r-R_m)\label{紧束缚近似的假设基础},
+                \end{equation}
+                且近似的认为
+                \begin{equation}
+                    \int \varphi_i^*(r-R_n)\varphi_i(r-R_m)\dif r=\delta_{nm}\label{格点波函数的正交归一性},
+                \end{equation}
+                即同一格点上的$\varphi_i$归一，不同格点上的$\varphi_i$因为交叠很小而正交。
+
+                \autoref{紧束缚近似的假设基础}中波函数的取法，相当于在每个格点附近，$\psi(r)$近似为该处原子波函数，此法也称为原子轨道线性组合法
+                （Linear Combination of Atomic Orbitals，简称LCAO）即晶体中共有化的轨道由原子轨道$\varphi_i(r-R_m)$的线性组合构成。
+                
+                $\psi(r)$应为布洛赫波函数，这要求\autoref{紧束缚近似的假设基础}中
+                \begin{equation}
+                    a_m=\frac{1}{\sqrt{N}}e^{ik\cdot R_m}.
+                \end{equation}
+                这样，\autoref{紧束缚近似的假设基础}中的$\psi(r)$可以用波矢$k$标记，即
+                \begin{equation}
+                    \psi_k(r)=\frac{1}{\sqrt{N}}\sum_{R_m}e^{ik\cdot R_m}\varphi_i(r-R_m)\label{满足布洛赫定理的紧束缚近似波函数},
+                \end{equation}
+                将\autoref{满足布洛赫定理的紧束缚近似波函数}代入晶体中的薛定谔方程，得到
+                \begin{equation}
+                    \sum_{R_m}e^{ik\cdot R_m}\left[ - \frac{\hbar^2}{2m}\nabla^2 - \varepsilon(k)+V(r) \right]\varphi_i(r-R_m)=0.
+                \end{equation}
+                变换得
+                \begin{equation}
+                    \sum_{R_m}e^{ik\cdot R_m}\left[ \varepsilon_i-\varepsilon(k)+V(r)-V_{at}(r-R_m) \right]\varphi_i(r-Rm)=0.
+                \end{equation}
+                左称$\varphi_i^*(r)$并积分，并利用$\varphi_i$的正交归一性\autoref{格点波函数的正交归一性}，得
+                \begin{equation}
+                    \begin{split}
+                        \varepsilon_i&-\varepsilon(k)+\int\Delta V(r,0)\left|\varphi_i(r)\right|^2\dif r\\
+                        &+\sum e^{ik\cdot R_m}\int\varphi_i^*(r)\Delta V(r,R_m)\varphi_i(r-R_m)\dif r=0,
+                    \end{split}\label{归一化的紧束缚近似薛定谔方程}
+                \end{equation}
+                由此可以得到$\varepsilon(k)$，式中
+                \begin{equation}
+                    \Delta V(r,R_m)=V(r)-V_{at}(r-R_m),
+                \end{equation}
+                是晶格周期势和格点$R_m$处的原子势之差。
+
+                利用\autoref{归一化的紧束缚近似薛定谔方程}，
+                \begin{equation}
+                    \varepsilon(k)=\varepsilon_i-J(0)-\sum_{n. n.}J(R_m)e^{ik\cdot R_m}\label{紧束缚近似下的能级表示},
+                \end{equation}
+                式中$\sum_{n. n.}$表示求和仅涉及最近邻(nearest neighbours)项，
+                \begin{equation}
+                    -J(0)=\int\Delta V(r,0)\left|\varphi_i(r)\right|^2\dif r,
+                \end{equation}
+                $J(0)$一般大于零且数值不大，这是因为$\Delta V(r,0)$一般为负，且在$R_m=0$附近，
+                $|\varphi_i(r)|^2$较大处，$\Delta V(r,0)$处接近于零，后面可以看到，这一项相当于能带的中心相对与原子能级
+                $\varepsilon_i$有一小平移。
+                \begin{equation}
+                    -J(R_m)=\int\varphi_i^*(r)\Delta V(r,R_m)\varphi_i(r-R_m)\dif r\label{交叠积分},
+                \end{equation}
+                仅当相距为$R_m$的两格点上原子波函数有所交叠时才不为零，因而称为交叠积分或者重叠积分，在紧束缚近似下，只考虑最近邻的交叠。
+
+                对于简单立方晶格中原子的$s$态，波函数$\varphi_s(r)$是球形对称的，对6个距离均为$a$的最近邻，交叠积分相同时取为$J_1$。
+                同时，由于$s$态波函数具有偶宇称$\varphi_s(r)=\varphi_s(-r)$，因而$J_1>0$。将近邻格矢
+                $(\pm a,0,0)$，$(0,\pm a,0)$，$(0,0,\pm a)$代入\autoref{紧束缚近似下的能级表示}，得到
+                \begin{equation}
+                    \varepsilon(k)=\varepsilon_s-J_0-2J_1\left( \cos{k_xa}+\cos{k_ya}+\cos{k_za} \right)\label{紧束缚近似下的能带和格矢关系},
+                \end{equation}
+                其中$J_0$是$J(0)$的简写。
+
+                由于最近邻原子的波函数的交叠，$N$重简并解除，展宽成能带，包含$N$个由不同$k$标记的扩展态。以
+                简单立方晶格的$s$态为例，$\varepsilon_s$展成宽度为$12J_1$的能带。
+
+                由于能带从原子能级演化而来，能带常用原子能级的量子数标记，如$3s$，$3p$或$3d$带等，原子的内层电子，如过渡族元素的$d$
+                电子，其轨道波函数与最近邻交叠甚少，形成的能带较窄，比较确定，这种分类方法比较合适，外层电子的波函数相互交叠较多，相应的能带较宽，
+                有时不同能带之间有所重叠，原子能级与能带之间对应比较复杂。
+
+                %//TODO:Wannier function should be written here, but we don't use it right now.
+
+        %\section{能带结构的计算}
+                %//TODO:这一部分与材料计算相关，考试中并不出现，之后再补。
+        \section{费米面和态密度}\label{section:费米面和态密度}
+            在\autoref{chapter:金属自由电子气体模型}中，已经讨论过费米面\index{费米面}，它的重要性在于仅只费米面附近的电子参与热激发\index{热激发}和输运过程\index{输运过程}，
+            本节将重点分析晶格势场的影响，再次讨论费米面及相关的态密度\index{态密度}，这也是能带计算给出的主要结果。
+
+            \subsection{高布里渊区}
+                晶格周期场存在时，费米面仍然有很大的意义，在基态情况下，$k$空间中单电子中单电子占据态和非占据态的分界面，但在简约布里渊区中表示时，形状有时会很复杂。
+                除第1布里渊区外，引入第2，第3等高布里渊区的概念有助于问题的讨论。
+
+                第n个布里渊区的定义为从第$n-1$个布里渊区出发，只经过一个布拉格平面，所能到达的所有点的集合。
+
+                除第1布里渊区\index{布里渊区!第1布里渊区}以外，高布里渊区\index{布里渊区!高布里渊区}均是有分立的小块组成，但是每个布里渊区的总体积相等，为倒空间一个原胞的体积。
+
+            \subsection{费米面的构造}
+                利用近自由电子近似，费米面总是与布里渊区边界垂直相交，如果晶体有和波矢$k$垂直的反映面，沿这一方向，$\varepsilon(k)$应是对称的，
+                同时，$\varepsilon(k)$又是倒格子空间的周期函数，因而有
+                \begin{align}
+                    \varepsilon(k)=\varepsilon(-k),&\left( \frac{\partial\varepsilon}{\partial k} \right)_k=\left( \frac{\partial\varepsilon}{\partial k} \right)_{-k};\\
+                    \varepsilon(k)=\varepsilon(k+G_h),&\left( \frac{\partial\varepsilon}{\partial k} \right)_k=\left( \frac{\partial\varepsilon}{\partial k} \right)_{k+G_h};\\
+                \end{align}
+                在布里渊区的边界上，$k=\pm G_h/2$，以上两式的结果不同
+                \begin{align}
+                    \left( \frac{\partial\varepsilon}{\partial k} \right)_{\frac{1}{2}G_h}&=-\left( \frac{\partial\varepsilon}{\partial k} \right)_{-\frac{1}{2}G_h},\\
+                    \left( \frac{\partial\varepsilon}{\partial k} \right)_{\frac{1}{2}G_h}&=+ \left( \frac{\partial\varepsilon}{\partial k} \right)_{-\frac{1}{2}G_h}.
+                \end{align}
+                因此，在边界上$\left( \frac{\partial\varepsilon}{\partial k} \right)=0$。
+
+            \subsection{态密度}
+                在\autoref{section:模型和基态性质}中，已经对态密度有过定义，对于第$n$个能带的态密度$g_n(\varepsilon)$
+                可以通过在$k$空间内第1布里渊区内，计算$\varepsilon\leq\varepsilon_n(k)\leq\varepsilon+\dif \varepsilon$等能面壳层的许可波矢来确定。
+                假定$S_n(\varepsilon)$是等能面$\varepsilon_n(k)=\varepsilon$在第1布里渊区内的部分，$\dif S$是其上的面积元，$\delta k(k)$是在点$k$处等能面$S_n(\varepsilon)$和$S_n(\varepsilon+\dif\varepsilon)$
+                之间的垂直距离，则
+                \begin{equation}
+                    g_n(\varepsilon)\dif \varepsilon=\frac{2}{V}\cdot\frac{V}{8\pi^3}\int_{S_n(\varepsilon)}^{}\delta k(k)\dif S\label{等能面壳层内的态密度}.
+                \end{equation}
+                因子2来源于每个$k$态可以容纳自旋取向相反的两个电子。由于
+                \begin{equation}
+                    \dif\varepsilon=\left|\nabla_k\varepsilon_n(k)\right|\delta k(k),
+                \end{equation}
+                代入\autoref{等能面壳层内的态密度}得到
+                \begin{equation}
+                    g_n(\varepsilon)=\int_{S_n(\varepsilon)}^{}\frac{1}{\left|\nabla_k\varepsilon_n(k)\right|}\frac{\dif S}{4\pi^3}\label{能带结构与态密度关系},
+                \end{equation}
+                由此，可以通过能带结构$\varepsilon_n(k)$计算态密度。
+
+                $\varepsilon_n(k)$是倒格子的周期函数，因此，每个原胞中总有一些$k$值处于$|\nabla_k\varepsilon|=0$，这导致\autoref{能带结构与态密度关系}中被积函数的发散，虽然在三维情况可积
+                但是斜率$\dif g_n(\varepsilon)/\dif \varepsilon$发散，$g_n(\varepsilon)$的这种奇异，称为Van Hove奇异\index{Van Hove奇异}
+
+                假如在$k=0$处，$\nabla_k\varepsilon(k)=0$，则在这一点附近有
+                \begin{equation}
+                    \varepsilon=\varepsilon_0+a_1k_x^2+a_2k_y^2+a_3k_z^3,
+                \end{equation}
+                可以分为四种情况
+                \begin{itemize}
+                    \item[1] $a_1,a_2,a_3>0$，$\varepsilon(k)$在$k=0$处为极小；
+                    \item[2] $a_1,a_2,a_3<0$，$\varepsilon(k)$在$k=0$处为极大；
+                    \item[3] $a_1,a_2>0,a_3<0$，$\varepsilon(k)$有第一类鞍点；
+                    \item[4] $a_1,a_2<0,a_3>0$，$\varepsilon(k)$有第二类鞍点；
+                \end{itemize}
+                %//TODO:这里四种情况的示意图还要画。

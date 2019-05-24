@@ -1,0 +1,277 @@
+\chapter{能带论II}
+    本章讨论布洛赫电子的动力学行为，将自由电子论的准经典模型推广为半经典模型\index{半经典模型}。
+    引入有效质量、空穴等重要概念，并从能带论的角度讲述金属半导体和绝缘体的区别。
+
+    \section{电子运动的半经典模型}
+        处于布洛赫态
+        \begin{equation}
+            \psi_{nk}(r)=e^{ik\cdot r}u_{nk}(r)
+        \end{equation}
+        的电子的平均速度
+        \begin{equation}
+            \begin{split}
+            \bar{v}_n(k)&=\frac{1}{m}\braket{\psi_{nk}^*(r)|\hat{p}|\psi_{nk}(r) }\\
+                &=\frac{1}{m}\int u_{nk}^*(r)(\hat{p}+\hbar k)u_{nk}(r)\dif r.
+            \end{split}
+        \end{equation}
+        根据\autoref{布洛赫形式的单电子薛定谔方程}
+        \begin{equation}
+            \hat{H}_k=\frac{\left( \hat{p}+\hbar k \right)^2}{2m}+V(r),        
+        \end{equation}
+        由于$k$值准连续，对薛定谔方程取$\nabla_k=\frac{\partial}{\partial k}$，得
+        \begin{equation}
+            \frac{\hbar}{m}(\hat{p}+\hbar k)u_{nk}(r)+\hat{H}_k\nabla_k u_{nk}(r)=\left[ \nabla_k \varepsilon_n(k)\right]u_{nk}(r)+\varepsilon_n(k)\nabla_ku_{nk}(r).
+        \end{equation}
+        右乘$u^*_{nk}(r)$再对$r$积分得到
+        \begin{equation}
+            \begin{split}
+            \frac{\hbar}{m}\int u^*_{nk}(r)(\hat{p}&+\hbar k)u_{nk}(r)\dif r+\int u^*_{nk}(r)\hat{H}_k\nabla_k u_{nk}(r)\dif r\\
+            &=\left[ \nabla_k \varepsilon_n(k)\right]\int u^*_{nk}(r)u_{nk}(r)\dif r+\varepsilon_n(k)\int u^*_{nk}(r)\nabla_k u_{nk}(r)\dif r.
+            \end{split}
+        \end{equation}
+        由于算符$\hat{H}_k$的厄密性，是的等式左右第二相相消，再根据波函数的归一性，是的等式右边的第一项为1，等式左边积分为$\hbar v_n(k)$，因此有
+        \begin{equation}
+            v_n(k)=\frac{1}{\hbar}\nabla_k\varepsilon_n(k)\label{布洛赫态电子的平均速度}.
+        \end{equation}
+
+        \autoref{布洛赫态电子的平均速度}是一个非常值得注意的结果，由于布洛赫态是与时间无关的定态，尽管电子和周期排列的粒子实存在相互作用，但是其平均速度将永远保持，不会衰减，换言之，一个理想的晶体金属，将有无穷大的电导。
+
+        但是由于晶体结构存在杂质缺陷，同时离子实有以平衡位置为中心的热运动，电子总会受到散射。因此关于电子的运动有两个方面的问题
+        \begin{itemize}
+            \item[1] 散射产生的原因和性质，
+            \item[2] 两次散射之间布洛赫电子的运动。
+        \end{itemize}
+        电子运动的半经典模型主要回答第二个问题。
+
+        \subsection{模型的表述}
+            半经典模型\index{半经典模型}对外电场、磁场用经典的方式处理，对晶格周期场沿用能带论量子力学的处理方式，具体表述如下：
+            
+            每个电子具有确定的位置$r$，波矢$k$和能带指标$n$，对于给定的$\varepsilon_n(k)$，在外电场$E(r,t)$和
+            外磁场$B(r,t)$作用下，位置、波矢、能带指标随时间的变化遵从如下规则：
+            \begin{itemize}
+                \item[1] 能带指标$n$是运动阐述，电子总处于同一能带中，忽略跃迁的可能性；
+                \item[2] 电子的速度为
+                            \begin{equation}
+                                \dot{r}=v_n(k)=\frac{1}{\hbar}\nabla_k\varepsilon_n(k)\label{外场中半经典模型的电子速度};
+                            \end{equation}
+                \item[3] 波矢$k$随时间的变化为
+                            \begin{equation}
+                                \hbar\dot{k}=-e\left[ E(r,t)+v_n(k)\times B(r,t) \right]\label{外电磁场下波矢$k$随时间的变化}.
+                            \end{equation}
+            \end{itemize}
+            
+            在半经典模型中，波矢$k$和$k+G_h$仍是等价的，$\hbar k$如\autoref{subsection:波矢k的取值和物理意义}所述，是电子的晶体动量。
+
+            \autoref{外场中半经典模型的电子速度}和\autoref{外电磁场下波矢$k$随时间的变化}是电子的运动方程，是晶格周期场的量子力学处理的结果全都概括在
+            $\varepsilon_n(k)$中，半经典模型使能带结构与输运性质，即电子对外场的响应相联系，提供了能带结构推断输运性质或反过来从输运性质的测量结果推断能带结构的理论基础。
+
+            对于模型的有效性，此处暂时不作证明。
+
+        \subsection{有效质量}
+            从\autoref{外场中半经典模型的电子速度}和\autoref{外电磁场下波矢$k$随时间的变化}出发，可以计算电子的加速度
+            \begin{equation}
+                \begin{split}
+                    \dot{v}&=\frac{\partial}{\partial t}\left[ \frac{1}{\hbar}\nabla_k\varepsilon(k) \right]\\
+                    &=\frac{1}{\hbar}\nabla_k\left[ \frac{1}{\hbar}\nabla_k\varepsilon(k) \right]\frac{\hbar\partial k}{\partial t}\\
+                    &=\frac{1}{\hbar^2}\nabla_k\nabla_k\varepsilon(k)\cdot F_{\mathrm{ext}}.
+                \end{split}\label{半经典模型中计算电子的加速度}
+            \end{equation}
+            此处省略能带指标，并用$F_{\mathrm{ext}}$代表作用在电子上的外电磁场力，和牛顿方程$m\dot{v}=F$相比，可以引入电子的有效质量\index{半经典模型!有效质量}，
+            或是有效质量张量\index{半经典模型!有效质量!有效质量张量}
+            \begin{equation}
+                \left[ \frac{1}{m^*} \right]_{ij}=\frac{1}{\hbar^2}\frac{\partial\varepsilon_n(k)}{\partial k_i\partial k_j}.
+            \end{equation}
+            由于微商可以交换次序，这时对称张量，晶体的点群对称性可以使张量的独立分量数减少\footnote{见阎守胜书2.2.6节《点群对称性和晶体的物理性质》。}。
+            通常用通过选择坐标轴于主轴方向，使之对角化的方式来达到。设$k_x$，$k_y$，$k_z$轴为主轴，
+            \begin{equation}
+                \frac{1}{m^*}=\frac{1}{\hbar}\frac{\partial^2\varepsilon_n(k)}{\partial k^2_{\alpha}},\alpha=x,y,z\label{有效质量定义}.
+            \end{equation}
+
+            有效质量的作用在于它概括了晶格内部周期场的作用，可以能简单地有外场里决定电子的加速度。
+
+            对于简单立方晶体紧束缚近似下的$s$ 能带，\autoref{紧束缚近似下的能带和格矢关系}按照有效质量的定义，可以算出在能带底，即$k=(0,0,0)$点，有效质量张量
+            约化为一标量，
+            \begin{equation}
+                m_x^*=m_y^*=m_z^*=m^*=\frac{\hbar^2}{2aJ_1},
+            \end{equation}
+            为正值，在能带底，即$k=\left( \pm\frac{\pi}{a},\pm\frac{\pi}{a},\pm\frac{\pi}{a} \right)$点
+            \begin{equation}
+                m_x^*=m_y^*=m_z^*=m^*=-\frac{\hbar^2}{2aJ_1},
+            \end{equation}
+            为负值。在能带底和能带顶，有效质量的各向同性来源于晶格的立方对称性，但在能带第附近，有效质量为正，能带顶附近，有效质量为负，具有普遍性，因为能带第和能带顶分别对应于
+            $\varepsilon_n(k)$函数的极小或极大，具有正值或者负值的二级微商。
+
+            一般来讲，对于宽的能带，能量随波矢$k$的变化较为剧烈，有效质量小，而对于窄的能带，应有大一些的有效质量，从紧束缚近似的角度，后者相当于相邻原子电子波函数交叠甚少，相对而言，
+            定域性更强一些。
+
+            知道材料的能带结构，可以按定义计算有效质量，实际工作中，常通过电子比热系数确定有效质量
+            \begin{equation}
+                \frac{\gamma_{exp}}{\gamma_0}=\frac{m^*}{m},
+            \end{equation}
+            其中$\gamma_0$是自由电子气体的热容理论值，$\gamma_{exp}$是实验测量值，这是由于$\gamma$比例与费米面的态密度$g(\varepsilon_F)$，
+            而后者比例于电子质量，有时称为热有效质量。
+
+    \section{恒定电场、磁场作用下电子的运动}
+        \subsection{恒定电场作用下的电子}\label{subsection:恒定电场作用下的电子}
+            在恒定电场$E$的作用下，半经典运动方程\autoref{外电磁场下波矢$k$随时间的变化}简化为
+            \begin{equation}
+                \hbar\dot{k}=-eE,
+            \end{equation}
+            其解为
+            \begin{equation}
+                k(t)=k(0)-\frac{eEt}{\hbar},
+            \end{equation}
+            即每个电子的波矢$k$均以同一速率发生改变。
+
+            对于自由电子，如电场使$k$增加，由于$\hbar k$是电子的动量，电子将不断被加速，实际上，因为受到散射，这种加速是有限的。
+
+            布洛赫电子的行为则完全不同，
+            \input{Chapters/fig_能带速度有效质量和波矢关系.tex}
+            \autoref{能带速度有效质量和波矢关系}给出一个一维能带$\varepsilon(k)$，以及相应的$v(k)$和$m^*(k)$的示意图，如果电场方向使$k$
+            不断增加，在$k=0$附近，$\varepsilon(k)\propto k^2$，$v(k)\propto k$，同时$m^*>0$，类似于自由电子，电子被加速，但在接近布里渊区边界，
+            速度达到极大值后，$m^*<0$，$k$增加时速度反而减小，以致于电子的加速度方向与电场力方向相反，这种特别的行为实际上是晶格周期场的作用，使电子在布里渊区
+            边界受到布拉格反射的结果。在半经典模型中，这种晶格场力隐含在$\varepsilon(k)$函数中。
+
+            当电子到达区边界后，在电场作用下，$k$继续增加，将进入第二布里渊区，在简约布里渊区图示中，这等价于再次进入第一布里渊区。
+            电子在$k$空间的循环运动，相应的速度随时间在$\pm v_{max}$之间周期性变化，意味着电子在实空间位置的振荡，直流的外加电场可能产生交变的电流，
+            这种效应称为布洛赫振荡\index{布洛赫振荡}。实际上，由于散射的存在，两次散射间电子在$k$空间移动的距离与布里渊区尺度相比甚小，一般情况下难以观察到。
+
+        \subsection{满带不导电}
+            能带中每个电子对电流密度的贡献为$-ev(k)$，带中所以电子的贡献为
+            \begin{equation}
+                J=(-e)\int_{\mathrm{occ}}v(k)\frac{\dif k}{4\pi^3}\label{能带中所有电子对电流密度的贡献},
+            \end{equation}
+            其中occ表示占据态积分，由于$\varepsilon_n(k)$函数的对称性，$\varepsilon_n(k)=\varepsilon_n(-k)$，根据\autoref{外场中半经典模型的电子速度}可知，
+            \begin{equation}
+                v_n(k)=-v_n(-k),
+            \end{equation}
+            即处在$k$态和$-k$态的电子，对电流密度的贡献恰好相消。对于填满的能带，外加电场时，每个电子的波矢$k$随时间变化，但如\autoref{subsection:恒定电场作用下的电子}
+            所述，由于$k$与$k+G_h$等价，满带的状况并不改变，因而$j=0$，即满带电子不参与导电，电导仅来源于部分填满的能带中电子的贡献，在外加电场和电子所受散射的共同作用下，电子对给定未满能带在$k$
+            空间的占据态是非对称的，对总电流的贡献不能完全抵消。
+        
+        \subsection{近满带中的空穴}
+            对于仅仅电子占满的近满带，对电流密度的贡献同样由\autoref{能带中所有电子对电流密度的贡献}式给出，利用满带不导电的事实，有
+            \begin{equation}
+                J+(-e)\int_{\mathrm{unocc}}^{}v(k)\frac{\dif k}{4\pi^3}=0,
+            \end{equation}
+            其中下标unocc表示积分只涉及未占据态\index{未占据态}，这样近满带对电流密度的贡献可以等价地写为
+            \begin{equation}
+                J=e\int_{\mathrm{unocc}}^{}v(k)\frac{\dif k}{4\pi^3}.                
+            \end{equation}
+            相当于所有的带脑子占据态看成是空态，而所有的未占据态看作是电荷为$+e$的粒子所占据，因此，尽管电荷仅被电子传输，但可以
+            引入一种假象的，带正电荷$e$填满带中所有电子未占据态的粒子，这种假象的粒子，称为空穴\index{空穴}。对于近满带，带中大量电子的行为可简化为
+            成少数空穴的效应，这样是十分方便的。
+
+            在外加电磁场中，未占据态的运动应个周围的占据态相同，同样用半经典模型描述，\autoref{半经典模型中计算电子的加速度}可以写作
+            \begin{equation}
+                \dot{v}_n(k)=\frac{1}{m^*}(-e)[E+ v_n(k)\times B].
+            \end{equation}
+            由于未占据态一般在带顶，带顶附近，$m^*$有负值，上式等价为
+            \begin{equation}
+                \dot{v}_n(k)=\frac{1}{|m^*|}e\left[ E+v_n(k)\times B \right],
+            \end{equation}
+            这相当于在近满带顶的空穴，带有正电荷$e$，且有正的有效质量$m^*_h=|m^*|$，速度仍为$v_n(k)$。
+
+            注意，对于某一固定能带，如认为电流为空穴所携带，则应把电子的占据态，电子没有贡献，如认为电流来源于占据态上的电子，则空穴没有
+            贡献，但对于不同的能带，可以对某些带用电子的图象，另外一些用空穴的图像，取决于哪一种更为方便。
+
+            空穴的引入，立即解决了自由电子其他模型在解释某些金属等正霍尔系数时所遇到的困难（\ce{Be}，\ce{Zn}，\ce{Cd}等），从能带论的角度，带正电荷的载流子的存在易于理解，在半导体中
+            长碰到价带顶的空穴，在半金属中，由于能带交叠，同时有空穴、电子存在，对于他们的了解，空穴的概念非常重要。
+
+        %\subsection{导体，半导体和绝缘体的能带论解释}
+        \subsection{恒定磁场作用下电子的准经典运动}
+            只有恒定的均匀磁场存在时，半经典方程为
+            \begin{align}
+                \dot{r}&=v(k)-\frac{1}{\hbar}\nabla_k\varepsilon(k)\label{恒定磁场下速度与波矢关系},\\
+                \hbar\dot{k}&=(-e)v(k)\times B\label{恒定磁场下波矢变化与磁场关系}.
+            \end{align}
+            可以看出，在$k$空间中，波矢$k$的变化总是
+            \begin{itemize}
+                \item[1] 垂直于$B$的方向，假定$B$在$z$方向，从\autoref{恒定磁场下波矢变化与磁场关系}得$\hbar \dot{k}\cdot B=0$，即$\dif k_z/\dif t=0$，$k)z$保持为常量；
+                \item[2] 垂直于$v$的方向，即$\hbar\dot{k}\cdot v(k)=0$，即$\dif \varepsilon(k)/\dif t=0$。
+            \end{itemize}
+
+            因此，电子总是沿着垂直与$B$的平面和等能面的交线运动，对于自由电子，等能面为球形，轨道为圆，如带脑子不受散射，圆周运动的周期
+            \begin{equation}
+                T=\frac{\oint\dif k}{\dif k/\dif t}=\frac{2\pi\hbar k}{evB}=\frac{2\pi m}{eB}\label{磁场下电子圆周运动的周期},
+            \end{equation}
+            角频率为
+            \begin{equation}
+                \omega_c=\frac{2\pi}{T}=\frac{eB}{m},
+            \end{equation}
+            通常称为回旋频率\index{回旋频率}，对于布洛赫电子，闭合轨道并非一定是圆形，形式上可以写成
+            \begin{equation}
+                \omega_c=\frac{eB}{m^\prime_c}\label{回旋频率与回旋有效质量},
+            \end{equation}
+            其中$m^\prime_c$称为回旋有效质量\index{回旋有效质量}，类似于\autoref{磁场下电子圆周运动的周期}，有
+            \begin{equation}
+                T(\varepsilon,k_z)=\frac{2\pi}{\omega_c}=\oint\frac{\dif k}{|\dot{k}|}=\frac{\hbar}{eB}\oint\frac{\dif k}{|v_\perp|}\label{电子在此磁场运动周期改写1},
+            \end{equation}
+            其中$v_\perp$是电子速度在磁场垂直方向的分量，假定$\Delta (k)$是在轨道平面上在$k$点与轨道垂直并连接$k$点和同一平面上能量为
+            $\varepsilon+\Delta\varepsilon$的等能轨道的矢量，由于$\Delta (k)$与$v_\perp$处于同一方向，根据\autoref{恒定磁场下速度与波矢关系}有
+            \begin{equation}
+                \Delta \varepsilon=\hbar|v_\perp|\Delta(k)
+            \end{equation}
+            \autoref{电子在此磁场运动周期改写1}可以改写为
+            \begin{equation}
+                \frac{2\pi}{\omega_c}=\frac{\hbar^2}{eB}\oint\frac{\Delta(k)\dif k}{\Delta\varepsilon}=\frac{\hbar^2}{eB}\frac{\partial}{\partial\varepsilon}A(\varepsilon,k_z),
+            \end{equation}
+            $A(\varepsilon,k_z)$是用$\varepsilon$，$k_z$标记的轨道在$k$空间位处的面积，而$\oint\Delta(k)\dif k$正是
+            $A(\varepsilon+\Delta\varepsilon,k_z)-A(\varepsilon,k_z)$，与\autoref{回旋频率与回旋有效质量}相比，
+            \begin{equation}
+                m_c^*=\frac{\hbar^2}{2\pi}\frac{\partial}{\partial\varepsilon}A(\varepsilon,k_z).
+            \end{equation}
+            此处的质量与之前所说的有效质量不一定相同，$m^*_c$是一个轨道的性质，并不单纯地只与一个特定的电子态相关联。
+
+            用磁场方向的单位矢量$\hat{B}$叉乘\autoref{恒定磁场下波矢变化与磁场关系}，得到
+            \begin{equation}
+                \frac{\dif}{\dif t}r_\perp=-\frac{\hbar}{eB}\hat{B}\times\frac{\dif }{\dif t}k,
+            \end{equation}
+            其中$r_\perp$是电子在实空间位置矢量在垂直磁场方向的投影，积分后得到
+            \begin{equation}
+                r_\perp(t)=r_\perp(0)=-\frac{\hbar}{eB}\times[k(t)-k(0)].
+            \end{equation}
+            因此，电子在实空间的位置矢量可由在$k$空间的轨道绕磁场轴旋转\ang{90}，并乘以因子$\hbar/eB$得到，
+            如果电子在$k$空间做回旋运动，则在实空间也做回旋运动，磁场越强，轨道半径越小。
+
+            沿磁场方向($z$方向)，有
+            \begin{equation}
+                z(t)=z(0)+\int_{0}^{t}v_z(t)\dif t, v_z=\frac{1}{\hbar}\frac{\partial}{\partial k_z},
+            \end{equation}
+            对自由电子，$v_k$为常数，沿磁场方向作匀速直线运动，对布洛赫电子，尽管$k_z$固定，但$v_z$未必一定不变，运动不一定是匀速的。
+        
+    \section{费米面的测量}
+        金属材料中的物理过程主要有费米面附近电子的行为决定，因此费米面的实验测定非常重要，关于费米面的几何知识，主要来源于
+        基于德哈斯-范阿尔芬效应\index{德哈斯-范阿尔芬效应}的实验，这是本机讨论的重点，效应色剂磁场作用下在晶格周期场中的布洛赫电子，
+        严格地应从薛定谔方程出发，但是由于求解比较困难，这里线给出磁场中自由电子的结果，有助于理解布洛赫电子的结果。
+        \subsection{均匀磁场中的自由电子}
+            对于边长为$L$，分别平行与$x$，$y$，$z$轴的立方体中的电子，在沿$z$方向均匀磁场$B$的情况下，本征能量由量子数$v$和$k_z$决定：
+            \begin{equation}
+                \varepsilon(k_z,v)=\frac{\hbar^2}{2m}k_z^2+\left( v+\frac{1}{2} \right)\hbar\omega_c, v=0,1,2\cdots\label{均匀磁场下电子运动的本征值}
+            \end{equation}
+            其中，$\omega_c$为\autoref{回旋频率与回旋有效质量}的回旋频率，$k_z$取值与吴磁场时相同，
+            \begin{equation}
+                k_z=\frac{2\pi}{L}n_z, n_z\text{为整数。}
+            \end{equation}
+            这与电子沿磁场方方向（z方向）运动，洛伦兹力为零，能量不改变的事实相符\footnote{为了处理简单，本征能量忽略了电子自旋和此处的相互作用能。}。
+
+            在垂直于磁场的方向，无磁场时的动能$\hbar^2(k_x^2+k_y^2)/2m$，按\autoref{均匀磁场下电子运动的本征值}，将$\hbar\omega_c$为单位量子化，简并到朗道能级\index{朗道能级}
+            $\left( v+\frac{1}{2} \right)\hbar\omega_c$上，这样，在$k$空间中，许可态的代表点将简并到朗道管\index{朗道管}上，其截面为朗道环\index{朗道管!朗道环}。
+
+            相邻两个朗道环间的面积为
+            \begin{equation}
+                \Delta A =\pi\Delta(k_x^2+k_y^2)=\frac{2\pi m\Delta\varepsilon}{\hbar^2}=\frac{2\pi m\hbar\omega_c}{\hbar^2}=\frac{2\pi eB}{\hbar},
+            \end{equation}
+            是一个正比于外加磁场$B$的常量，在$k_z$固定的平面中，态密度为$L^2/4\pi^2$，每个朗道能级，或朗道环上的简并度为
+            \begin{equation}
+                p=\frac{2e}{h}BL^2,
+            \end{equation}
+            在\SI{1}{\tesla}下，对于$L=\SI{1}{\cm}$的样品，简并度约为$10^{11}$，每个朗道能级都是高度简并的。
+        \subsection{布洛赫电子量子化}
+            对于布洛赫电子，电子的半经典闭合轨道将按玻尔量子化条件，即
+            \begin{equation}
+                \oint p\cdot\dif r=(v+\gamma)2\pi\hbar\label{半经典闭合轨道的量子化},
+            \end{equation}
+            量子化，其中$v$为整数，$\gamma$是一相位常数，典型值为$1/2$，按照半经典模型，\autoref{半经典闭合轨道的量子化}
+        \subsection{德哈斯-范阿尔芬效应}
+        

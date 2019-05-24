@@ -1,0 +1,101 @@
+\chapter{能带理论}
+\begin{define}
+    电子的能带指\textbf{晶体}电子的能级，能带理论的主要任务就是去确定固体电子的能级。
+\end{define}
+作用：
+\begin{itemize}
+    \item 阐明固体的基本性质，比如振动谱，磁有序，电导率，热导率，光学介电函数。
+    \item 预测新材料，解释新现象。
+\end{itemize}
+能带图：横坐标为波矢（量子数），纵坐标为能量。
+
+能带和能带之间的间隙如何产生？
+
+本课程所作的简化：
+\begin{itemize}
+    \item 绝热近似：多粒子变为多电子，认为原子核处于静止状态。
+    \item 单电子近似，假设所有电子的哈密顿量为：
+    \begin{equation}
+        H_e=\sum_{i=1}\left[-\frac{1}{2}v_e(r_i)+\sum_{R_n}\frac{1}{4\pi\varepsilon_0}\frac{e^2}{|r_i-R_n|}\right]
+    \end{equation}
+    多电子变为单电子问题，但是当相互作用势不能忽略时，不能用单电子近似，比如超导现象。
+    \item  周期场近似，假设所有晶体的分布一致。忽略晶格振动和晶体缺陷
+\end{itemize}
+
+\section{一维周期势场的电子运动}
+\subsection{电子运动的方程}
+周期性势场：
+\begin{equation}
+    V(x)=V(x+ni).
+\end{equation}
+运动方程：薛定谔方程（一维）
+
+此处使用微扰法，电子的能量和波函数分别近似到二级和一级。
+
+假设微扰项为：
+\begin{equation}
+    \Delta V=V(x)-\bar{V}.
+\end{equation}
+\begin{itemize}
+    \item 一级微扰方程
+    \item 零级波函数
+    \item 边界条件与波矢的取值
+    \begin{equation}
+        k=\frac{2\pi l}{aN'}, l=0,\pm 1,\pm 2\cdots .
+    \end{equation}
+    当$N'$原胞数足够大时，可视为准连续\footnote{布里渊区的宽度与$a$晶体结构有关。}。
+\end{itemize}
+
+\subsection[Bloch Theorem]{布洛赫定理}
+    当势场具有周期性边界条件（晶格势场），波函数满足满足如下性质
+    \begin{equation}
+        \varphi(r+\vec{R}_n)=e^{i\vec{k}\cdot \vec{R}_n}\varphi(r).
+    \end{equation}
+    其中$\vec{k}$为一矢量，其表明平移晶格矢量$\vec{R}_n$时，波函数只增加相位因子$e^{i\vec{k}\cdot \vec{R}_n}$。
+
+\subsection{微扰计算（近自由电子近似）}
+\begin{itemize}
+    \item 微扰计算公式
+    \subitem 能量微扰项
+    \subitem 波函数微扰项 
+    \item 微扰矩阵元，得出选择定则：K态只能散射到相差一个倒格矢$k_n=n\frac{2\pi}{a}$的位置。
+\end{itemize}
+如果$K=n\frac{\pi}{a}$出现简并情况，非简并微扰法不再适用，应当使用简并微扰法。
+
+当波矢$k=n\frac{\pi}{a}$，符合选择定则的两个态进行线性组合
+\begin{equation}
+    \Psi^{(0)}=A\Psi^{(0)}_k+B\Psi^{(0)}_{k'}.
+\end{equation}
+
+除此之外，波矢接近Bragg反射条件的两个态的能量非常接近。借助简并微扰的思想，我们将能量很接近的两个线性组合
+使其同时满足选择定则和Bragg反射条件。所得能量为：
+\begin{align}
+    E=T_n(1+\Delta^2)\pm\sqrt{4T^2_n\Delta^2+|V_n|^2},
+    T_n= \frac{\hbar^2}{2m}\left(n\frac{\pi}{a}\right)^2.\\
+\end{align}
+结果讨论：
+\begin{itemize}
+    \item 在$k=\pm n\frac{\pi}{a}$此时$\Delta$很小
+\end{itemize}
+\subsection{能带与禁带}
+能量本征值$E_k$是波矢$k$的函数，在零级近似，既有电子模型下的能谱为抛物线关系：
+\begin{equation*}
+    E_k^{(0)}=\frac{\hbar^2k^2}{2m}.
+\end{equation*}
+计入周期场的微扰作用后，能量在k空间倒格矢的中点，即$k=n\frac{\pi}{a}$处断开，
+电子能量不能取值，禁带宽度为$2|V_n|$。
+
+\section{三维周期场中的电子运动}
+\subsection{模型和微扰计算}
+\subsubsection{运动方程}
+电子受到粒子周期性势场的作用，势场的起伏较小, 零级近似，用势场的平均值代替离子产生的势场
+\begin{align}
+    \text{势场的平均值},&\bar{V}=\frac{1}{\Omega}\int_{\Omega}V(\vec{r})\dif \vec{r},\\
+    \text{周期性势场起伏量},&V(\vec{r})-\bar{V}=\Delta V.
+\end{align}
+
+\subsection{布里渊区和能带}
+
+\subsection{紧束缚近似}
+两原子接近时，核与电子之间的库仑力使电子能级分立，然后形成能带。晶体内不同量子数的原子处于不同的能带
+能带的宽度与近邻原子的重叠电子云的交互作用成正比。

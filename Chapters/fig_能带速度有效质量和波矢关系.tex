@@ -1,0 +1,57 @@
+\begin{figure}[ht]
+    \centering
+    \subfloat[电子能量]
+    {
+        \begin{tikzpicture}{scale=0.3}
+                \begin{axis}
+                    [
+                    axis lines=center,
+                    xlabel={$\vec{k}$},
+                    ylabel={$\varepsilon$},
+                    ymax=2,ymin=0,
+                    ytick=\empty,
+                    xtick=\empty,
+                    ]
+                        \addplot[red,domain=-3.14:3.14,samples=200] {1-cos(deg(x))};
+                \end{axis}
+                
+        \end{tikzpicture}%     
+    }
+    \\
+    \subfloat[电子速度]
+    {
+        \begin{tikzpicture}{scale=0.3}
+            \begin{axis}
+                [
+                axis lines=center,
+                xlabel={$\vec{k}$},
+                ylabel={$v$},
+                ymax=1,ymin=-1,
+                ytick=\empty,
+                xtick=\empty,
+                ]
+                    \addplot[red,domain=-3.14:3.14,samples=200] {sin(deg(x))};
+            \end{axis}
+    \end{tikzpicture}%
+    }   
+    \\
+    \subfloat[有效质量]
+    {
+        \begin{tikzpicture}{scale=0.3}
+                \begin{axis}
+                    [
+                    axis lines=center,
+                    xlabel={$\vec{k}$},
+                    ylabel={$\varepsilon$},
+                    ymax=2,ymin=0,
+                    ytick=\empty,
+                    xtick=\empty,
+                    ]
+                        \addplot[red,domain=-3.14:3.14,samples=200] {1-cos(deg(x))};
+                \end{axis}
+                
+        \end{tikzpicture}%     
+    }
+    \caption{能带速度有效质量和波矢关系。}
+    \label{能带速度有效质量和波矢关系}
+\end{figure}

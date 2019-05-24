@@ -1,0 +1,154 @@
+\chapter{金属自由电子气体模型}\label{chapter:金属自由电子气体模型}
+\section{模型和基态性质}\label{section:模型和基态性质}
+     {自由电子气体模型}的基本假定：
+    \begin{itemize}
+        \item[1] 忽略电子和离子实自间的相互作用，电子的自由运动范围仅在样品内部，离子实为保持体系电中性的均匀正电荷，类似于 {凝胶}。
+        \item[2] 忽略电子与电子之间的相互作用，也就是 {独立电子近似}。
+    \end{itemize}
+    \subsection{单电子本征态和本征能量}\label{subsection:单电子本征态和本征能量}
+        对于温度$T=0$，体积$V=L^3$内的$N$个自由电子，其中$L$为立方边的边长，独立电子近似使$N$个电子的问题转化为单电子问题。单电子的状态波函数
+        为$\varphi(r)$描述，$\varphi(r)$满足的不含时的薛定谔方程为：
+        \begin{equation}
+            \left[-\frac{\hbar^2}{2m}\nabla^2+V(r)\right]\varphi(r)=\varepsilon(r)\label{不含时单电子薛定谔方程}.
+        \end{equation}
+        其中$V(r)$为电子在金属中的势能，$\varepsilon$为电子的本征能量，忽略电子离子实的相互作用，在凝胶体系内$V(r)$为常数势，
+        可以简单取零，\autoref{不含时单电子薛定谔方程}可以写为：
+        \begin{equation}
+            -\frac{\hbar^2}{2m}\nabla^2\varphi(r)=\varepsilon\varphi(r).
+        \end{equation}
+        与电子在自由空间运动的情形相同，方程有平面波解，
+        \begin{equation}
+            \varphi(r)=Ce^{ik\cdot r}\label{未归一化单电子波函数},
+        \end{equation}
+        其中$C$为归一化常数，使得整个空间内的电子出现的概率为1
+        \begin{equation}
+            \int_V\left|\varphi(r)\right|^2\dif r=1.
+        \end{equation}
+        因此波函数\autoref{未归一化单电子波函数}也就可以写作
+        \begin{equation}
+            \varphi_k(r)=\frac{1}{\sqrt{V}}e^{ik\cdot r}\label{归一化单电子波函数},
+        \end{equation}
+        其中用以标记波函数的$k$是平面波的波矢，$k$的方向为平面波的传播方向，$k$的大小与波长$\lambda$的关系为
+        \begin{equation}
+            k=\frac{2\pi}{\lambda}\label{电子波矢与波长的关系}.
+        \end{equation}
+        将\autoref{归一化单电子波函数}代入\autoref{不含时单电子薛定谔方程}可得相应的电子能量为
+        \begin{equation}
+            \varepsilon(k)=\frac{\hbar^2k^2}{2m}\label{单电子近似能量}.
+        \end{equation}
+
+        由于$\varphi_k(r)$同时也是动量算符$p=-i\hbar\nabla$的本征态，因此处于$\varphi_k(r)$的电子有确定的动量
+        \begin{equation}
+            p=\hbar k\label{电子动量与波矢关系}.
+        \end{equation}
+        相应的速度为
+        \begin{equation}
+            v=\frac{p}{m}=\frac{\hbar k}{m},
+        \end{equation}
+        由此能量\autoref{单电子近似能量}也可以写作经典形式
+        \begin{equation}
+           \varepsilon=\frac{p^2}{2m}=\frac{1}{2}mv^2\label{单电子近似能量经典形式}.
+        \end{equation}
+
+        然而波矢$k$的取值要由边条件确定，普遍采用周期性边界条件\index{周期性边界条件}，或是Born-von Karman边界条件\index{Born-von Karman边界条件}边界条件
+        \begin{equation}
+            \left\{
+                \begin{aligned}
+                    \varphi(x+L,y,z)=\varphi(x,y,z),\\
+                    \varphi(x,y+L,z)=\varphi(x,y,z),\\
+                    \varphi(x,y,z+L)=\varphi(x,y,z).\\
+                \end{aligned}\label{周期性边界条件}\right.
+        \end{equation}
+
+        对于一维情况，则可以简化为$ \varphi(x+L)=\varphi(x)$，相当于将$L$长的金属线受位相接成环，从而实现在有限的尺寸内消除了边界的情况。
+        三维情况则可以视为是$L^3$的立方体在三个方向平移填满整个空间，当电子到达表面时，并不受到反射，二是进入相对的表面的相应点\footnote{这个条件与分子动力学的周期性边界条件类似。}。
+
+        根据\autoref{周期性边界条件}和\autoref{归一化单电子波函数}，可得：
+        \begin{equation}
+            e^{ik_x\cdot L}=e^{ik_y\cdot L}=e^{ik_z\cdot L}.
+        \end{equation}
+        因此有
+        \begin{equation}
+            k_x=\frac{2\pi}{L}n_x,k_y=\frac{2\pi}{L}n_y,k_z=\frac{2\pi}{L}n_z,n_x,n_y,n_z=0,1,2,3,\cdots
+        \end{equation}
+        物理上重要的是边条件的附加导致波矢$k$取值的量子化，单电子本征能量\autoref{单电子近似能量}也为分立值。
+
+        波矢$k$视为空间矢量，相应的空间称为$k$空间，在$k$空间中许可的$k$值用分立的点表示，每个点在$k$空间的体积为$\Delta k=(2\pi/L)^3=8\pi^3/V$，$k$空间中单位体积内许可态的代表点数，
+        或$k$空间中的态密度为
+        \begin{equation}
+            \frac{1}{\Delta k}=\frac{V}{8\pi^3}\label{k空间的态密度}.
+        \end{equation}
+    \subsection{基态和基态的能量}\label{subsection:基态和基态的能量}
+        $T=0$时，$N$个电子对许可态的占据，简单地由{泡利不相容原理}决定，即每个单电子态最多可由一个电子占据。单电子态有波矢$k$和电子自旋沿任意方向的投影标记。由于
+        自旋只能取两个值，$\hbar/2$或$-\hbar/2$，每个许可的$k$态上，可以有两个电子占据。
+
+        $N$个电子的基态，可以从能量最低的$k=0$开始，按能量从低到高，每个$k$态两个电子，依次填充而得到。由于单电子能级的能量比例于波矢的平方，
+        $N$的数目又很大，在$k$空间，占据区最后会形成一个球，一般称为{费米球}，其半径称为{费米波矢}，记为$k_F$。在$k$空间中把占据态和未占据态
+        分开的界面为{费米面}。在金属的近代理论中，费米面是一个非常重要的基本概念。
+
+        采用$k$空间态密度的表达式\autoref{k空间的态密度}，可得$k_F$和电子密度$n$的联系，由于
+        \begin{equation}
+            2\times\frac{V}{8\pi^3}\times\frac{4}{3}\pi k_F^3=N,
+        \end{equation}
+        因而
+        \begin{equation}
+            k_f^3=3\pi^2n\label{费米波矢与电子密度关系}.
+        \end{equation}
+
+        费米面上单电子态的能量称为{费米能量}
+        \begin{equation}
+            \varepsilon_F=\frac{\hbar^2k_F^2}{2m}\label{费米能量},
+        \end{equation}
+        相应的还有{费米动量}$p=\hbar k_F$，{费米速度}$v_F=\hbar k_F/m$，以及{费米温度}$T_F=\varepsilon_F/k_B$，$k_B$为玻尔兹曼常数。
+
+        单位体积自由电子气体的基态能量为$\xi$，可由费米求内所有的单电子能级的能量相加得到，
+        \begin{equation}
+            \frac{\xi}{V}=\frac{2}{V}\sum_{k<k_F}\frac{\hbar^2k^2}{2m},
+        \end{equation}
+        其中因子2来源于每个$k$态有两个电子占据，采用\autoref{k空间的态密度}，上式改写为
+        \begin{equation}
+            \frac{2}{V}\sum_{k<k_F}\frac{\hbar^2k^2}{2m}=\frac{2}{8\pi^3}\sum_{k<k_F}\frac{\hbar^2k^2}{2m}\Delta k.            
+        \end{equation}
+        对于$\Delta k\to0$即$V\to\infty$的极限，求和过渡为积分
+        \begin{equation}
+            \lim_{V\to\infty}\frac{1}{V}\sum_{k}F(k)=\frac{1}{8\pi^3}\int F(k)\dif k\label{费米球内的电子的平均能量的积分过程1},
+        \end{equation}
+        其中$F(k)$是所有许可$k$值的光滑函数，因而
+        \begin{equation}
+            \frac{\xi}{V}=\frac{1}{4\pi^3}\int_{k<k_F}\frac{\hbar^2k^2}{2m}\dif k=\frac{1}{\pi^2}\frac{\hbar^2k_F^5}{10m}\label{费米球内的电子的平均能量的积分过程2}.
+        \end{equation}
+        此处将$\dif k$转化为球坐标系，应当补充积分因子$2\pi k^2$，根据\autoref{费米波矢与电子密度关系}，每个电子的平均能量为
+        \begin{equation}
+            \frac{\xi}{N}=\frac{3}{5}\varepsilon_F\label{电子平均能量1}.
+        \end{equation}
+
+        常引入单位体积的态密度，即单位体积样品中，单位能量间隔内，包含自旋的电子态数$g(\varepsilon)$来计算，这样能量$\varepsilon$到$\varepsilon+\dif\varepsilon$间的电子态数为
+        \begin{equation}
+            \dif N=Vg(\varepsilon)\dif\varepsilon.
+        \end{equation}
+
+        设在$k$空间中能量$\varepsilon$到$\varepsilon+\dif\varepsilon$间的等能面球壳，分别对应于$k$和$k+\dif k$，采用$k$空间态密度\autoref{k空间的态密度}
+        得到
+        \begin{equation}
+            \dif N=2\frac{V}{8\pi^3}4\pi k^2\dif k,
+        \end{equation}
+        代入\autoref{单电子近似能量}，将$k$变为$\varepsilon$，得到
+        \begin{equation}
+            g(\varepsilon)=\frac{1}{\pi^2\hbar^3}(2m^3\varepsilon)^{1/2}\label{电子态数与能量关系}.
+        \end{equation}
+        常用到费米面处的态密度
+        \begin{align}
+            g(\varepsilon_F)=\frac{3}{2}\frac{n}{\varepsilon_F}\label{费米面处的态密度1},\\
+            g(\varepsilon_F)=\frac{mk_F}{\pi^2\hbar^2}\label{费米面处的态密度2}.
+        \end{align}
+        基态时的每个电子的平均能量，亦可通过$g(\varepsilon)$计算，即
+        \begin{equation}
+            \frac{\xi}{N}=\int_0^{\varepsilon_F}\varepsilon g(\varepsilon)\dif\varepsilon/\int_0^{\varepsilon_F}g(\varepsilon)\dif \varepsilon.
+        \end{equation}
+        结果与\autoref{电子平均能量1}结果相同。
+
+        在$T=0$的基态，电子的平均能量约为$\varepsilon_F$的量级，相当于$10^4~10^5\mathrm{K}$这和Drude最初的经典模型完全不同，按照经典的概念，电子的平均能量为$\frac{3}{2}k_BT$，$T=0$时为0.
+
+        在统计物理中，体系与静态行为的偏离，常称为简并性。在$T=0$时，金属自由电子气体是完全简并的。由于$T_F$很高，在室温下，电子气体也是高度简并的。
+            
+        

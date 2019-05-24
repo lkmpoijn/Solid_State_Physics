@@ -1,0 +1,39 @@
+\chapter{Problems}
+\section{能带理论}
+内容来自课后习题和习题课。
+\subsection{量子力学基础}
+    该题来源于黄昆书P582.
+    \begin{example}
+        根据$k=\pm \frac{\pi}{a}$状态\textbf{简并微扰}结果，求出与$E_+$、$E_-$对应的本征态波函数$\psi_+$和$\psi_-$，说明他们都代表驻波
+        并比较两个电子云分布（即$|\psi|^2$），说明能隙的来源，假设($V_n=V_n^*$)。
+
+        根据题意可知，该体系存在二重简并，波函数$\psi$可视为两简并态叠加
+        \begin{equation*}
+            \psi=A\psi_k+B\psi_{k'}.
+        \end{equation*}
+        带入薛定谔方程，并分别左乘两者共轭波函数可得：
+        \begin{equation*}
+            \left\{\begin{aligned}
+                A(E_k^0-E)+BV_n^*=0,\\
+                AV_n+B(E_{k'}^0-E)=0.
+            \end{aligned}\right.
+        \end{equation*}
+        $E_+=E_k+V_n,E_-=E_{k'}-V_n$，波函数为（此处将$E$分别取$E_+$、$E_-$代入）
+        \begin{equation*}
+            \left\{
+                \begin{aligned}
+                    \psi_+=\frac{A}{\sqrt{L}}[e^{i\frac{n\pi}{a}x}-e^{-i\frac{n\pi}{a}x}]=\frac{2A}{L}\sin{\frac{n\pi}{a}x},\\
+                    \psi_-=\frac{A}{\sqrt{L}}[e^{i\frac{n\pi}{a}x}+e^{-i\frac{n\pi}{a}x}]=\frac{2A}{L}\cos{\frac{n\pi}{a}x}.\\
+                \end{aligned}\right.
+        \end{equation*}
+        在该状态下，波函数与时间无关，因此波函数为驻波。在无微扰的情况下，能量为与波矢有关的函数$E=\frac{\hbar^2k^2}{2m}$，
+        微扰后，在$k=\pm \frac{\pi}{a}$的位置，能级突变$2|V_n|$，导致能隙产生。
+        
+        注意简并微扰，利用久期方程(secular equation)计算能量，以及 
+    \end{example}
+    黄昆书习题4.7
+    \begin{example}
+        有一一维
+    \end{example}
+    作业有5.1，5.2 5.4，5.6共四道题。
+    2.1，2.2，2.3，2.5，2.6共5道题，14周周一交。
