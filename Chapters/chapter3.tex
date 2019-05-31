@@ -158,7 +158,7 @@
             \begin{equation}
                 J=e\int_{\mathrm{unocc}}^{}v(k)\frac{\dif k}{4\pi^3}.                
             \end{equation}
-            相当于所有的带脑子占据态看成是空态，而所有的未占据态看作是电荷为$+e$的粒子所占据，因此，尽管电荷仅被电子传输，但可以
+            相当于所有的电子占据态看成是空态，而所有的未占据态看作是电荷为$+e$的粒子所占据，因此，尽管电荷仅被电子传输，但可以
             引入一种假象的，带正电荷$e$填满带中所有电子未占据态的粒子，这种假象的粒子，称为空穴\index{空穴}。对于近满带，带中大量电子的行为可简化为
             成少数空穴的效应，这样是十分方便的。
 
@@ -191,7 +191,7 @@
                 \item[2] 垂直于$v$的方向，即$\hbar\dot{k}\cdot v(k)=0$，即$\dif \varepsilon(k)/\dif t=0$。
             \end{itemize}
 
-            因此，电子总是沿着垂直与$B$的平面和等能面的交线运动，对于自由电子，等能面为球形，轨道为圆，如带脑子不受散射，圆周运动的周期
+            因此，电子总是沿着垂直与$B$的平面和等能面的交线运动，对于自由电子，等能面为球形，轨道为圆，如电子不受散射，圆周运动的周期
             \begin{equation}
                 T=\frac{\oint\dif k}{\dif k/\dif t}=\frac{2\pi\hbar k}{evB}=\frac{2\pi m}{eB}\label{磁场下电子圆周运动的周期},
             \end{equation}
@@ -229,7 +229,7 @@
             \end{equation}
             其中$r_\perp$是电子在实空间位置矢量在垂直磁场方向的投影，积分后得到
             \begin{equation}
-                r_\perp(t)=r_\perp(0)=-\frac{\hbar}{eB}\times[k(t)-k(0)].
+                r_\perp(t)-r_\perp(0)=-\frac{\hbar}{eB}\times[k(t)-k(0)]\label{磁场中位移矢量随时间变化情况}.
             \end{equation}
             因此，电子在实空间的位置矢量可由在$k$空间的轨道绕磁场轴旋转\ang{90}，并乘以因子$\hbar/eB$得到，
             如果电子在$k$空间做回旋运动，则在实空间也做回旋运动，磁场越强，轨道半径越小。
@@ -273,5 +273,75 @@
                 \oint p\cdot\dif r=(v+\gamma)2\pi\hbar\label{半经典闭合轨道的量子化},
             \end{equation}
             量子化，其中$v$为整数，$\gamma$是一相位常数，典型值为$1/2$，按照半经典模型，\autoref{半经典闭合轨道的量子化}
+            中的动量为
+            \begin{equation}
+                p=\hbar k-eA,
+            \end{equation}
+            利用\autoref{外电磁场下波矢$k$随时间的变化}，主语$B$在$z$方向。
+            \begin{equation}
+                \hbar k=-e(r\times B)=-e(x\hat{x}-x\hat{y})B.
+            \end{equation}
+            这相当于
+            \begin{equation}
+                \nabla\times\hbar k=2eB.
+            \end{equation}
+            由于$\nabla\times A=B$，因此\autoref{半经典闭合轨道的量子化}可以写为
+            \begin{equation}
+                \oint(\hbar k-eA)\cdot\dif r=\iint eB\cdot\dif S=eBA_r,
+            \end{equation}
+            其中$A_r$是电子轨道在实空间所围的面积，根据上式有
+            \begin{equation}
+                A_r=\frac{2\pi \hbar}{eB}(v+\gamma),
+            \end{equation}
+            根据\autoref{磁场中位移矢量随时间变化情况}，$A_r$和电子轨道在$k$空间所围面积$A_v(k_z)$相差因子
+            $(eB/\hbar)^2$，因而
+            \begin{equation}
+                A_v(k_z)=\frac{2\pi eB}{\hbar}(v+\gamma)\label{闭合轨道在k空间所围面积},
+            \end{equation}
+            即闭合轨道在$k$空间所围面接是以$2\pi eB/\hbar$为单位量子化的，这与自由电子的情况相同。
+
+            相邻闭合轨道能量差为普朗克常数与在该轨道上半经典运动回旋频率的乘积，也就是
+            \begin{equation}
+                \varepsilon_{v+1}(k_z)-\varepsilon_v(k_z)=\hbar\omega_c.
+            \end{equation}
         \subsection{德哈斯-范阿尔芬效应}
-        
+            德哈斯和范阿尔芬在测量金属单晶样品的高磁场磁化率时发现磁化率随磁场改变而振荡，后来这一发现成为了
+            测量费米面的有效工具。这种振荡具有明显的规则性，如果对磁场的倒数$1/B$作图，就可以清晰地看到磁化率周期性变化，
+            有时可有两个或多个周期叠加在一起。
+
+            由于体系的磁矩$M$和体系自由能$F$的关系为
+            \begin{equation}
+                M(B)=-\frac{\partial F}{\partial B},    
+            \end{equation}
+            因此磁化率$\chi=\mu_0 M/B$随磁场的振荡，依赖于自由能对磁场的依赖关系，为简单器件，讨论$T=0$的情况下，
+            假如费米能$\varepsilon_F$恰好在两个朗道能级间，电子体系的总能量将低于零外磁场情况，相当于费米能附近的每个电子能量降低约$\frac{1}{2}\hbar\omega_c$，
+            外磁场增加时，按照\autoref{闭合轨道在k空间所围面积}，朗道能级包围的面积增大，填有电子的最上层，朗道能级向费米能级靠近，体系能量嘴贱增加到极大，
+            朗道能级通过费米能级$\varepsilon_F$后，电子不再占据，体系能量下降，在$\varepsilon_F$处于两个朗道能级正中间时达到极小值，
+            由此，电子体系的能量周期性变化，其周期由\autoref{闭合轨道在k空间所围面积}中$A_v(k_z)=A(\varepsilon_F,k_z)$确定，当同时考虑多个朗道管的贡献时，它们
+            和秘密面的交线所围面积不同，或等价地，对一个特点的朗道管，磁场增加时，朗道管扩大，和费米面交线所围面积也在改变。
+
+            事实上，当朗道管与费米面的交线仅在管上向上或向下移动时，体系能量几乎没有变化，仅当整个朗道管
+            完全通过费米面时，体系能量才有明显的改变，因此决定周期的是费米面上的极端轨道所围的面积，当磁场沿$z$
+            方向时，极端轨道由条件
+            \begin{equation}
+                \frac{\partial A(\varepsilon_F,k_z}{\partial k_z}=0,
+            \end{equation}
+            决定，即相应截面积或为极大，或为极小，统一记作$A_e(\varepsilon_F,k_z)$，由此，
+            德哈斯-范阿尔芬的振荡周期为
+            \begin{equation}
+                \Delta\left(\frac{1}{B}\right)=\frac{2\pi e}{\hbar}\frac{1}{A_e(\varepsilon_F,k_z)}\label{德哈斯-范阿尔芬效应的振荡周期},
+            \end{equation}
+            这样改变磁场的方向，可得到费米面所有的极端截面积从而构造出费米面实际的形状。
+            实际上在某一方向可能不是只有一个极端轨道，或不止一个带部分填满，情况要复杂很多，参照能带结构近似计算的结果，有助于对所得数据的理解。
+
+            类似与对体系能量的讨论，可以考察每个朗道管对费米面附近态密度$g(\varepsilon_F)\dif \varepsilon$的贡献，这比例于朗道管在等能面$\varepsilon_F$
+            和$\varepsilon_F+\dif \varepsilon$之间的部分，当能量$\varepsilon_F$的极端轨道在朗道管上时，管上对$g(\varepsilon_F)\dif \varepsilon$有贡献的部分大大增加，
+            这导致态密度以及一些于此有关的物理量随磁场的振荡，其中电导率的振荡称为de Haas-Shubnikov效应。
+
+            在非零温度，金属的物理性质决定于$\varepsilon_F$附近$k_BT$范围内电子的贡献，如果这一范围使得\autoref{德哈斯-范阿尔芬效应的振荡周期}中极端截面积不够确定，则$1/B$
+            振荡的结构会被抹平，一般要求$k_BT$小于相邻朗道管间的能量间隔，即
+            \begin{equation}
+                k_BT<\hbar\omega_c,
+            \end{equation}
+            对于自由电子其他，磁场为\SI{1}{\tesla}的数量级时，要求温度低到几个\si{\K}。
+            同时为了有较长的弛豫时间$\tau$从而有很确定的回旋频率$\omega_c$，样品要是单晶，且很纯，没有应变，当然要使实验结果与确定的极端截面相对应，样品必须是单晶。

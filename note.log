@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.5.3)  24 MAY 2019 22:22
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.5.3)  29 MAY 2019 17:05
 entering extended mode
 **c:/Users/lenovo/Desktop/课件/固体物理/固体物理笔记/note.tex
 (c:/Users/lenovo/Desktop/课件/固体物理/固体物理笔记/note.tex
@@ -1541,18 +1541,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] [2
 
 ] (note.toc
-[3])
+[3]
+LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <12> not available
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
+62.
+ [4])
 \tf@toc=\write6
 \openout6 = `note.toc'.
 
-LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
-141.
- [4] [5
+ [5] [6
 
-] [6
+] [7
 
-] [7] [8] (Chapters/chapter1.tex
+] [8] (Chapters/chapter1.tex
 Chapter 1.
 [9
 
@@ -1614,28 +1615,40 @@ Missing character: There is no = in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 3 in font nullfont!
-) [34] [35] [36] [37])
-(Chapters/Problems.tex [38]
-Chapter 5.
+) [34] [35] [36] [37] [38]
 [39
 
-]) [40]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 154.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
+] [40]) (Chapters/晶格振动.tex [41] [42
+
+]
+Chapter 5.
+[43] [44] (Chapters/fig/仅考虑最近邻相互作用的单原子的色散关系.tex) [45]) (Chapters/Problems.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46]
+[47] [48
+
+]
+Chapter 6.
+[49])
+No file note.ind.
+[50]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 155.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
  (note.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 154.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 155.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
 Package rerunfilecheck Info: File `note.out' has not changed.
-(rerunfilecheck)             Checksum: C03861F36A6AE1A8A0BE6C1EFD6C52AE.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
+(rerunfilecheck)             Checksum: F5A90055BDB97739B29476687276BC0E.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 155.
  ) 
 Here is how much of TeX's memory you used:
- 53101 strings out of 427671
- 1225508 string characters out of 3149235
- 1467924 words of memory out of 3000000
- 56481 multiletter control sequences out of 15000+200000
+ 53165 strings out of 427671
+ 1227247 string characters out of 3149235
+ 1472876 words of memory out of 3000000
+ 56537 multiletter control sequences out of 15000+200000
  541077 words of font info for 106 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  75i,18n,127p,774b,2227s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on note.pdf (40 pages).
+Output written on note.pdf (50 pages).

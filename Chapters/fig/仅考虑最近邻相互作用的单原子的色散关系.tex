@@ -1,0 +1,17 @@
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xmin=-1.6,xmax=1.6,
+            ymin=0,ymax=1.3,
+            xlabel={$q$},
+            ylabel={$\omega(q)$},
+        ]
+            \addplot[domain=0:1.57,samples=100] {sin(deg(x)};
+            \addplot[pos=0,domain=-1.57:0] {sin(-deg(x)};
+           % node (0,1) {$2\sqrt{\frac{\beta}{M}}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{仅考虑最近邻相互作用的单原子链的色散关系。}
+    \label{仅考虑最近邻相互作用的单原子链的色散关系}
+\end{figure}

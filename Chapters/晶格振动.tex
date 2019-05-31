@@ -1,0 +1,140 @@
+\chapter{晶格振动}
+    在之前的单电子近似以及紧束缚近似等研究方法中都认为离子实是保持静止不动的，
+    因此也得出了一些与实际不符结果，比如理想周期势中，电子的运动不受散射，相应的电导和热导
+    也是无穷大，实际上离子实围绕其平衡位置发生热振动导致晶格对理想周期势的偏离，
+    这是金属中电子所受散射的主要来源，导致金属电导随温度的变化。
+
+    本章相当于在之前的电子薛定谔方程上叠加晶格的薛定谔方程，形成多体问题。但是利用晶格振动很小这一事实
+    可以对晶格离子实之间作用能进行级数展开，并保留第一个非零项（2次项），这种做法称为简谐近似\index{简谐近似}，
+    在经典力学中，简谐近似下的小振动有精确解，而在量子力学中，可以通过将其量子化来解决。
+
+    本章的内容从简谐晶体的经典运动讨论，建立离子实的运动方程，得到晶格振动的简正模（normal mode）\index{简正模}
+    的能量和频率。然后对简谐晶体的量子力学处理，强调了引进简正坐标将多体问题化为单体问题的方法，并建立了声子的概念，
+    在此基础上讨论了晶格系统的平衡态性质下的晶格比热以及相关的近似模型。有关晶格振动谱是实验测定以及离子实作用能中
+    高次项对运动的影响，也就是非简谐项，主要涉及晶体的热膨胀和热导率。
+
+    \section{晶体的经典运动}
+        前面的章节中，假定晶体中离子实不动，并且周期性规则排列，其结构用布拉维格子和基元
+        来描述，本章将采用更实际的物理图像：
+        \begin{itemize}
+            \item[1] 仍然假定晶体中离子实可以有布拉维格子的格式$R_n$来标记，但是是平衡位置，原因在于离子实不再静止但是实验观察表面，布拉维格子依然存在；
+            \item[2] 离子实微扰平衡位置做小的振动，其瞬时位置对平衡位置的偏离小于离子间距，如之前所述，这简化了晶格振动的理论处理。
+        \end{itemize}
+        \subsection{简谐近似}
+            假定晶体中离子实或原子任意时刻的位置为
+            \begin{equation}
+                R(R_n)=R_n+u(R_n),
+            \end{equation}
+            其中$u(R_n)$是对平衡位置$R_n$的偏离。
+
+            如果将两个原子之间的相互作用势能写出$\Phi[R(R_n)-R(R_{n^{\prime}})]$，晶体的
+            总势能为
+            \begin{equation}
+                \begin{aligned}
+                    V&=\frac{1}{2}\sum{}^{\prime}_{R_n,R_{n^\prime}}\Phi[R(R_n)-R(R_{n^{\prime}})]\\
+                    &=\frac{1}{2}\sum{}^{\prime}_{R_n,R_{n^\prime}}\Phi[R_n-R_{n^{\prime}}+u(R_n)-u(R_{n^{\prime}})].
+                \end{aligned}
+            \end{equation}
+            由于$\left\vert u(R_n)-u(R_{n^\prime})\right\vert\leq\left\vert R_n-R_{n^{\prime}}\right\vert$，可将相互作用
+            势能在其平均值作泰勒展开为
+            \begin{equation}
+                \begin{aligned}
+                    V=&\frac{1}{2}\sum{}^{\prime}_{R_n,R_{n^\prime}}\Phi(R_n-R_{n^\prime})\\
+                    &+\frac{1}{2}\sum{}^{\prime}_{R_n,R_{n^\prime}}[u(R_n)-u(R_{n^\prime})]\cdot\nabla\Phi(R_n-R_{n^\prime})\\
+                    &+\frac{1}{4}\sum{}^{\prime}_{R_n,R_{n^\prime}}[u(R_n)-u(R_{n^\prime})]\cdot\nabla^2\Phi(R_n-R_{n'})+\cdots
+                \end{aligned}\label{对离子实相互作用势的泰勒展开}
+            \end{equation}
+            上式右边第一项，是晶体中每个原子都处在平衡位置时的相互作用能，这是一个常数，在讨论动力学问题时一般不考虑，
+            第二项，及位移的线性项，由于原子处于平衡位置对应于相互作用能的极值二消失。对于平衡势能第一个非零的改正项
+            是位移的二次项，在总势能中仅保留这一项称为简谐近似，在直角坐标系中写作分量的形式
+            \begin{equation}
+                V=\frac{1}{4}\sum{}^{\prime}_{R_n,R_{n^\prime}}[u_\mu(R_n)-u_\mu(R_{n^\prime})]\Phi_{\mu v}(R_n-R_{n'})\times[u_v(R_n)-u_v(R_{n^\prime})]\label{简谐近似的相互作用能},
+            \end{equation}
+            其中，$\mu,v=x,y,z$，而
+            \begin{equation}
+                \Phi_{\mu v}(r)=\frac{\partial^2\Phi(r)}{\partial r_\mu\partial r_v},
+            \end{equation}
+            在\autoref{对离子实相互作用势的泰勒展开}中，对平衡势能的其他修正项，主要是位移的3次项和4次项，
+            称为非简谐项，对于热传导和热膨胀物理现象的解释，非简谐项非常重要。
+
+
+        \subsection{一维单原子链，声学支}
+            尽管相互作用中只保留简谐项的简单晶体的晶格振动可用经典力学处理，这里先研究最简单的每个晶胞只有一个
+            但原子链，避免三维情形的复杂性，更为注意问题的物理方面。
+
+            假定一维单原子链中每个原子质量为$M$，布拉维格子的格矢$R_n=na$，总长为$L=Na$，$N$为原胞总数，$a$为格点间距，
+            链上任意原子的运动方程为
+            \begin{equation}
+                M\ddot{u}(na)=-\frac{\partial V}{\partial u(na)}\label{经典条件一维原子链的离子实运动方程1},
+            \end{equation}
+            其中$u(na)$为以$na$为中心振动的原子在沿链方向对其平衡位置的偏离。
+
+            为简单起见，仅考虑最近邻原子间的相互作用，\autoref{简谐近似的相互作用能}变为
+            \begin{equation}
+                \begin{aligned}
+                    V&=\frac{1}{4}\sum{}^{\prime}_{R_n,R_{n^\prime}}[u_\mu(R_n)-u_\mu(R_{n^\prime})]^2\Phi_{xx}(R_n-R_{n'})\\
+                    &=\frac{1}{2}\sum_{n}\beta\left[ u(na)-u((n+1)a) \right]^2,
+                \end{aligned}\label{只考虑最近邻的离子实简谐相互作用势}
+            \end{equation}
+            其中
+            \begin{equation}
+                \beta=\Phi_{xx}(a)=\frac{\dif^2\Phi(x)}{\dif x^2}.
+            \end{equation}
+            \autoref{只考虑最近邻的离子实简谐相互作用势}中系数变为$\frac{1}{2}$的原因是，求和方式发生了变化，没有对任意一对相互作用势
+            重复计算。
+
+            \autoref{只考虑最近邻的离子实简谐相互作用势}代入\autoref{经典条件一维原子链的离子实运动方程1}，运动方程为
+            \begin{equation}
+                M\ddot{u}(na)=\beta\left[ u((n+1)a)+u((n-1)a)-2u(na) \right]\label{经典条件一维原子链的离子实运动方程2},
+            \end{equation}
+            这是原子之间用力常数为$\beta$的无质量弹簧连接起来的链的运动方程，利用数理方程知识，该方程的解
+            应为波的形式，由于运动方程有平移不变性，解应该满足布洛赫定离，即每一解均有特定波矢$q$标记，根据\autoref{布洛赫定理}，
+            可以写作
+            \begin{equation}
+                u(na,t)=e^{iqna}u(0,t)\label{简谐近似下的离子实运动公式},
+            \end{equation}
+            这里按照习惯将晶格振动的波矢取成$q$，以和电子的波矢$k$相区别，两者都是同一倒格子空间中的矢量。
+
+            \autoref{简谐近似下的离子实运动公式}说明各个原胞中原子的振幅相等，并有按$e^{iqna}$变化的一定的相位关系，
+            这样，每确定$q$的解代表波长为$2\pi/|q|$的集体运动，称为格波，也成为晶格振动的一个简正模，或是简正模式，
+            令$u(0,t)$取$Ae^{-iat}$的形式，\autoref{简谐近似下的离子实运动公式}也就可以写作
+            \begin{equation}
+                u(na,t)=Ae^{i(qna-qt)}.
+            \end{equation}
+            代入运动方程\autoref{经典条件一维原子链的离子实运动方程2}，得到
+            \begin{equation}
+                \begin{aligned}
+                    -M\omega^2Ae^{i(qna-qt)}&=-\beta[2-e^{-iqa}-e^{iqa}]Ae^{i(qna-qt)}\\
+                    &=-2\beta[1-\cos{qa}]Ae^{i(qna-qt)},
+                \end{aligned}
+            \end{equation}
+            也就是说，对于特定的$q$，相应的频率为
+            \begin{equation}
+                \omega(q)=\sqrt{\frac{2\beta(1-\cos{qa})}{M}}=2\sqrt{\frac{\beta}{M}}\left\vert \sin{\frac{1}{2}qa}\right\vert,
+            \end{equation}
+            这就是格波的色散关系，取正根的原因是物理上讲频率为实数。
+
+            $q$的取值根据周期性边界条件\autoref{周期性边界条件}确定，这要求
+            \begin{equation}
+                e^{iqNa}=1,
+            \end{equation}
+            相当于
+            \begin{equation}
+                q=\frac{l}{N}\frac{2\pi}{a},l=\pm1,\pm2,\cdots
+            \end{equation}
+            因此，在$q$空间中，许可波矢的态密度为$L/2\pi$，不等价的$q$限制在第一布里渊区中，
+            由于布里渊区的尺度为$\frac{2\pi}{a}$，所以$q$的数目与晶胞数相同，
+            \input{Chapters/fig/仅考虑最近邻相互作用的单原子的色散关系.tex}
+        \subsection{一维双原子链，光学支}
+        \subsection{三维情形}
+    \section{简谐晶体的量子理论}
+        \subsection{简正坐标}
+        \subsection{声子}
+        \subsection{晶格比热}
+        \subsection{声子态密度（声子模式密度）}
+    \section{晶格振动谱的实验测定}
+        \subsection{中子的非弹性散射}
+        \subsection{可见光的非弹性散射}
+    \section{非简谐效应}
+        \subsection{热膨胀}
+        \subsection{晶格热导率}
