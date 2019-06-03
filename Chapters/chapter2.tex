@@ -114,16 +114,16 @@
             \end{equation}
             这也就是写作\autoref{平移算符本征值关系}形式的布洛赫定理。
 
-        \subsection{波矢$k$的取值和物理意义}\label{subsection:波矢k的取值和物理意义}
+        \subsection{波矢的取值和物理意义}\label{subsection:波矢k的取值和物理意义}
             波矢$k$的取值由边界条件确定，与\autoref{section:模型和基态性质}相同，取周期性边界条件，
             但不仅限于边长为$L$的立方体。\autoref{周期性边界条件}推广为
             \begin{equation}
                 \left\{
-                    \begin{split}
+                    \begin{aligned}
                         \psi(r+N_1a_1)=\psi(r),\\
                         \psi(r+N_2a_2)=\psi(r),\\
                         \psi(r+N_3a_3)=\psi(r),
-                    \end{split}\label{推广的周期性边界条件}\right.
+                    \end{aligned}\label{推广的周期性边界条件}\right.
             \end{equation}
             其中$a_i(i=1,2,3)$是布拉维格子的三个基矢，$N=N_1N_2N_3$是晶体中原胞的总数，$N_i$是量级为$N^{1/3}$的整数。
 
@@ -341,8 +341,8 @@
             $V_{G_h}$是弱周期势傅里叶展开中与$G_h$相联系项的系数，具体的计算仍要用简并微扰论方法，需要考虑波矢相差一倒格矢，在自由电子情形能量简并的态。
             比如\autoref{二维长方倒格子的第一布里渊区和一些布拉格线的示意}中的$P$态，需要考虑和$P'$态的混合，为了得到在$Q$点的能量跃变，则需要考虑和$Q'$，$Q''$
             态的混合，与\autoref{一维简并情况久期方程}对应的是$3\times3$的行列式。
-            \input{Chapters/二维长方倒格子的第一布里渊区和一些布拉格线的示意.tex}
-
+           % \input{Chapters/二维长方倒格子的第一布里渊区和一些布拉格线的示意.tex}
+            \input{Chapters/fig/first_Brillouin_zone_in_2D.tex}
             三维情况下，简并条件\autoref{简并微扰使用条件1}可以写作
             \begin{equation}
                 |k|=|k-G_h|,

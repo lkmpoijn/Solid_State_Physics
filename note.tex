@@ -1,10 +1,13 @@
 % !TEX program = xelatex
-\documentclass[12pt]{book}
-\usepackage{etex}
+\documentclass[12pt,a4paper,UTF8]{book}
 \usepackage{ctex}
+\usepackage{etex}
 \usepackage{authblk}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra} 
 \usepackage{subfig}
 \usepackage{geometry}
 \geometry{a4paper,scale=0.8}
@@ -147,9 +150,9 @@ spanning style={very thick,decoration=penciline,decorate}]%
 \input{Chapters/chapter1new.tex}
 \input{Chapters/chapter2.tex}
 \input{Chapters/chapter3.tex}
-\input{Chapters/晶格振动.tex}
+\input{Chapters/crystal_vibration.tex}
 \input{Chapters/Problems.tex}
 
 \printindex
-%\addcontentsline{toc}{section}{索引}
+\addcontentsline{toc}{section}{索引}
 \end{document}

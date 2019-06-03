@@ -110,7 +110,7 @@
             \end{equation}
             也就是说，对于特定的$q$，相应的频率为
             \begin{equation}
-                \omega(q)=\sqrt{\frac{2\beta(1-\cos{qa})}{M}}=2\sqrt{\frac{\beta}{M}}\left\vert \sin{\frac{1}{2}qa}\right\vert,
+                \omega(q)=\sqrt{\frac{2\beta(1-\cos{qa})}{M}}=2\sqrt{\frac{\beta}{M}}\left\vert \sin{\frac{1}{2}qa}\right\vert\label{波矢q对应的格波频率},
             \end{equation}
             这就是格波的色散关系，取正根的原因是物理上讲频率为实数。
 
@@ -124,8 +124,23 @@
             \end{equation}
             因此，在$q$空间中，许可波矢的态密度为$L/2\pi$，不等价的$q$限制在第一布里渊区中，
             由于布里渊区的尺度为$\frac{2\pi}{a}$，所以$q$的数目与晶胞数相同，
-            \input{Chapters/fig/仅考虑最近邻相互作用的单原子的色散关系.tex}
+            %\input{Chapters/fig/仅考虑最近邻相互作用的单原子的色散关系.tex}
+            \input{Chapters/fig/Monoatomic_chain_dispersion_relation.tex}s
+            \autoref{仅考虑最近邻相互作用的单原子链的色散关系}给出了第一布里渊区内的单原子链的色散关系\autoref{波矢q对应的格波频率}，
+            最大频率为$2\sqrt{\frac{\beta}{M}}$，在布里渊区边界处，格波的群速度为$\frac{\dif \omega}{\dif q}=0$，相当于
+            说到布拉格反射，形成驻波，在长波极限下，$qa\ll1$，\autoref{波矢q对应的格波频率}写成
+            \begin{equation}
+                \omega\simeq a\sqrt{\frac{\beta}{M}}q,
+            \end{equation}
+            此时链中分立的原子结构可以忽略，色散关系与一维连续介质中的声波或弹性波相同，系数$a\sqrt{\frac{\beta}{M}}$为声速，
+            因此将$q\to0$，$\omega\to0$的色散关系称为声学支，每一组$(\omega,q)$所对应的振动模式也称为声学模。
+
         \subsection{一维双原子链，光学支}
+            在之前的讨论中，认为所有的原子都是等价的，占据在布拉维格子的格点上，做同样的运动，相近的原子在同一时刻运动方向
+            相同，对于晶体基元中原子数大于1的情况，晶体或由不同种类的原子构成，或同样的原子占据不等价的位置，情况要复杂一些，
+            晶格振动的主要特征可通过对一维双原子链的讨论得到。
+
+            对于一维双原子链，由基元分别质量M和m的两种原子组成
         \subsection{三维情形}
     \section{简谐晶体的量子理论}
         \subsection{简正坐标}
